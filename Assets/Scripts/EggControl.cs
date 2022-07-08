@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EggControl : MonoBehaviour
 {
-    float springFrequency = 1f;
+
+    public float eggFollowForce = 1f;
+    public float eggSlipperyness = 1f; //The bigger the slipperyness the less force for the spring to break
+
+    [SerializeField] float damping = 0.7f;
     bool eggIsFollowing = false;
     bool eggIsHovered = false;
 
@@ -26,13 +30,14 @@ public class EggControl : MonoBehaviour
             spring = gameObject.AddComponent<SpringJoint2D>();
             spring.connectedBody = mouseFollower;
             Debug.Log("setting anchor to: " + mousePosition);
-            spring.anchor = mousePosition;
+            //convert mouse position to local space
+            spring.anchor = transform.InverseTransformPoint(mousePosition);
             Debug.Log("Anchor position: " + mousePosition);
-            spring.dampingRatio = 0.5f;
-            spring.frequency = springFrequency;
+            spring.dampingRatio = damping;
+            spring.frequency = eggFollowForce;
+            spring.breakForce = 1000/eggSlipperyness;
             spring.distance = 0;
             spring.autoConfigureDistance = false;
-            
         }
 
         //if mouse is released, stop egg
