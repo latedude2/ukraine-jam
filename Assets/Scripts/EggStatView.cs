@@ -15,7 +15,7 @@ public class EggStatView : MonoBehaviour
     Text thicknessTopRight;
 
     Progression progression;
-
+    ButtonSoundManager buttonSoundManager;
 
     void Start()
     {
@@ -27,6 +27,7 @@ public class EggStatView : MonoBehaviour
         thicknessBottomRight = GameObject.Find("BottomRightThickness").GetComponent<Text>();
         thicknessTopRight = GameObject.Find("TopRightThickness").GetComponent<Text>();
         //if loaded scene is upgrade
+        buttonSoundManager = GameObject.FindWithTag("ButtonSoundManager").GetComponent<ButtonSoundManager>();
     }
 
     // Update is called once per frame
@@ -90,6 +91,7 @@ public class EggStatView : MonoBehaviour
                     eggManager.EggThicknessTopRight = chosenEggManager.EggThicknessTopRight;
                     eggManager.EggSprite = chosenEggManager.GetComponent<SpriteRenderer>().sprite;
                     eggManager.EggColor = chosenEggManager.GetComponent<SpriteRenderer>().color;
+                    buttonSoundManager.PlayOnButtonClick();
                     //Load battle scene
                     if (GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
                     {
