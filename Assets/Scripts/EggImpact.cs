@@ -8,14 +8,18 @@ public class EggImpact : MonoBehaviour
     //You must assign to these two GameObjects in the Inspector
     public GameObject m_MyObject;
 
+    //clockwise around egg
+    int[] hitZoneAngles = new int[5] {
+        65,-10,-90,-170,115};
+
     void Start()
     {
-
+        
     }
 
     void Update()
     {
-        //GetAngleOfImpact(m_MyObject.transform.position);
+        GetAngleOfImpact(m_MyObject.transform.position);
     }
 
     float GetAngleOfImpact(Vector3 hitPosition)
@@ -31,11 +35,19 @@ public class EggImpact : MonoBehaviour
             m_SignedAngle = -m_SignedAngle;
         }
         
-        Debug.Log("Signed Angle: " + m_SignedAngle);
-        
-        if (m_SignedAngle > 160 && m_SignedAngle < 200){
+        //Debug.Log("Signed Angle: " + m_SignedAngle);
+        /*if (m_SignedAngle > hitZoneAngles[0] && m_SignedAngle < hitZoneAngles[4]){
             Debug.Log("Tip Hit!!!");
-        }
+        } else if(m_SignedAngle > hitZoneAngles[1] && m_SignedAngle < hitZoneAngles[0]){
+            Debug.Log("Right top!!!");
+        } else if(m_SignedAngle > hitZoneAngles[2] && m_SignedAngle < hitZoneAngles[1]){
+            Debug.Log("Right Bottom!!!");
+        } else if(m_SignedAngle > hitZoneAngles[3] && m_SignedAngle < hitZoneAngles[2]){
+            Debug.Log("Left Bottom!!!");
+        } else if(m_SignedAngle > hitZoneAngles[4] || m_SignedAngle < hitZoneAngles[3]){
+            Debug.Log("Left Top!!!");
+        }*/
+
         return m_SignedAngle;
     }
 
@@ -62,8 +74,16 @@ public class EggImpact : MonoBehaviour
 
                 float hitAngle = GetAngleOfImpact(averagePos);
 
-                if (hitAngle > 160+gameObject.transform.rotation.eulerAngles.z && hitAngle < 200+gameObject.transform.rotation.eulerAngles.z){
-                    //Debug.Log("Tip Hit!!!");
+                if (hitAngle > hitZoneAngles[0] && hitAngle < hitZoneAngles[4]){
+                    Debug.Log("Tip Hit!!!");
+                } else if(hitAngle > hitZoneAngles[1] && hitAngle < hitZoneAngles[0]){
+                    Debug.Log("Right top!!!");
+                } else if(hitAngle > hitZoneAngles[2] && hitAngle < hitZoneAngles[1]){
+                    Debug.Log("Right Bottom!!!");
+                } else if(hitAngle > hitZoneAngles[3] && hitAngle < hitZoneAngles[2]){
+                    Debug.Log("Left Bottom!!!");
+                } else if(hitAngle > hitZoneAngles[4] || hitAngle < hitZoneAngles[3]){
+                    Debug.Log("Left Top!!!");
                 }
             }
         }
