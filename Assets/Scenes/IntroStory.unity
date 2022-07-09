@@ -430,16 +430,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
-      value: 'You''re god damn right. First, you''ll meet the egg from the mighty
+      value: 'You''re god dang right. First, you''ll meet the egg from the mighty
         Bulgaria, one of the oldest countries in Europe and the homeland of yogurt.
         Do eggs go well with yogurt? We''ll find out.
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
       value: Welcome! Do you dare challenge the EEG champions of Eastern Europe?
         I've heard that Poland still stands undefeated!
       objectReference: {fileID: 0}
+    - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
