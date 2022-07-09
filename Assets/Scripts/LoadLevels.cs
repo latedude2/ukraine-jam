@@ -27,4 +27,9 @@ public class LoadLevels : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+
+    public void LoadMainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
