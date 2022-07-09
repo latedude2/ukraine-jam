@@ -424,5 +424,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasVictory
       objectReference: {fileID: 0}
+    - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_Text
+      value: Is it time to face Nicolaus Cop-egg-nicus? Raise your pierogis!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
+    - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_Text
+      value: The Czech Republic egg will need to drown its sorrows with beer. Doesn't
+        sound that bad if you ask me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}

@@ -336,6 +336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5275461897324232867, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929881415081915, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -426,8 +430,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
-      value: 'I''m starving to see some more action. Will Hungary put this streak
-        to an end? I''ve heard this egg comes from the city called Esztergom.
+      value: 'You''re god dang right. First, you''ll meet the egg from the mighty
+        Bulgaria, one of the oldest countries in Europe and the homeland of yogurt.
+        Do eggs go well with yogurt? We''ll find out.
 
 '
       objectReference: {fileID: 0}
@@ -437,8 +442,8 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
-      value: Romania has faster internet than the United States. They can't even
-        blame lag for this loss. Who do we have next?
+      value: Welcome! Do you dare challenge the EEG champions of Eastern Europe?
+        I've heard that Poland still stands undefeated!
       objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_FontData.m_Font
