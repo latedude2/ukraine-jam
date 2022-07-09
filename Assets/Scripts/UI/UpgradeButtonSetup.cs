@@ -9,6 +9,8 @@ public class UpgradeButtonSetup : MonoBehaviour
     public Button TopLeftShellButton, BottomRightShellButton, BottomLeftShellButton;
     public Button EggSlipButton;
 
+    int upgradesLeft = 5;
+
     EggUpgrade eggUpgrade;
 
     // Start is called before the first frame update
@@ -27,31 +29,53 @@ public class UpgradeButtonSetup : MonoBehaviour
     void UpgradeTipShrapness()
     {
         eggUpgrade.IncreaseEggTipSharpness();
+        DoUpgrade();
     }
 
     void UpgradeShellTop()
     {
         eggUpgrade.IncreaseEggTopThickness();
+        DoUpgrade();
     }
     void UpgradeTopRightShell()
     {
         eggUpgrade.IncreaseEggTopRightThickness();
+        DoUpgrade();
     }
     void UpgradeTopLeftShell()
     {
         eggUpgrade.IncreaseEggTopLeftThickness();
+        DoUpgrade();
     }
     void UpgradeBottomRightShell()
     {
         eggUpgrade.IncreaseEggBottomRightThickness();
+        DoUpgrade();
     }
     void UpgradeBottomLeftShell()
     {
         eggUpgrade.IncreaseEggBottomLeftThickness();
+        DoUpgrade();
     }
     void UpgradeEggSlip()
     {
         eggUpgrade.IncreaseEggSlipperyness();
+        DoUpgrade();
+    }
+
+    void DoUpgrade()
+    {
+        upgradesLeft--;
+        if (upgradesLeft == 0)
+        {
+            Destroy(TipSharpnessButton);
+            Destroy(ShellTopButton);
+            Destroy(TopRightShellButton);
+            Destroy(TopLeftShellButton);
+            Destroy(BottomRightShellButton);
+            Destroy(BottomLeftShellButton);
+            Destroy(EggSlipButton);
+        }
     }
 
 }
