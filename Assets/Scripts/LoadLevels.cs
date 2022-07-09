@@ -22,4 +22,9 @@ public class LoadLevels : MonoBehaviour
     {
         SceneManager.LoadScene("ChooseEgg");
     }
+
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }
