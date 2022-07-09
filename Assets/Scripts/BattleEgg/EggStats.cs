@@ -47,15 +47,15 @@ public class EggStats : MonoBehaviour
 
     public float CalcImpactValue(int side, float force) {
         if (side == 0) {    //tip
-            return force * EggThicknessTop * .1f * EggTipSharpness;
+            return force * 500f * EggTipSharpness;
         } else if (side == 1){  //right top
-            return force * EggThicknessTopRight * .1f;
+            return force * 500f;
         } else if (side == 2){  //right bottom
-            return force * EggThicknessBottomRight * .1f;
+            return force * 500f;
         } else if (side == 3){  //left bottom
-            return force * EggThicknessBottomLeft * .1f;
+            return force * 500f;
         } else if (side == 4){  //left top
-            return force * EggThicknessTopLeft * .1f;
+            return force * 500f;
         }
         return 0;
     }
@@ -63,15 +63,15 @@ public class EggStats : MonoBehaviour
     public void TakeImpactDamage(float incomingDamage, int side) {
         Debug.Log("Incoming damage: " + incomingDamage + "; Side: " + side);
         if (side == 0) {    //tip
-            currentHealthTop -= incomingDamage;
+            currentHealthTop -= incomingDamage / EggThicknessTop;
         } else if (side == 1){  //right top
-            currentHealthTopRight -= incomingDamage;
+            currentHealthTopRight -= incomingDamage / EggThicknessTopRight;
         } else if (side == 2){  //right bottom
-            currentHealthBottomRight -= incomingDamage;
+            currentHealthBottomRight -= incomingDamage / EggThicknessBottomRight;
         } else if (side == 3){  //left bottom
-            currentHealthBottomLeft -= incomingDamage;
+            currentHealthBottomLeft -= incomingDamage / EggThicknessBottomLeft;
         } else if (side == 4){  //left top
-            currentHealthTopLeft -= incomingDamage; 
+            currentHealthTopLeft -= incomingDamage / EggThicknessTopLeft; 
         }
 
         if (isPlayer){
