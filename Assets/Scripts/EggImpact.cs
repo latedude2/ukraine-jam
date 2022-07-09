@@ -5,44 +5,38 @@ using UnityEngine;
 
 public class EggImpact : MonoBehaviour
 {
-
-    
-    Vector2 m_MySecondVector;
-
-    float m_SignedAngle;
-
     //You must assign to these two GameObjects in the Inspector
     public GameObject m_MyObject;
 
     void Start()
     {
-        //Initialise the Vector
-        m_MySecondVector = Vector2.zero;
-        m_SignedAngle = 0.0f;
+
     }
 
     void Update()
     {
-        //Fetch the second GameObject's position
-        m_MySecondVector = new Vector2(m_MyObject.transform.position.x-gameObject.transform.position.x, m_MyObject.transform.position.y-gameObject.transform.position.y);
-        //Find the angle for the two Vectors
-        Debug.Log("Egg rot: " + gameObject.transform.rotation.eulerAngles.z);
+        //GetAngleOfImpact(m_MyObject.transform.position);
+    }
 
-        m_SignedAngle = Vector2.SignedAngle(new Vector2(0,1), m_MySecondVector);
-
+    float GetAngleOfImpact(Vector3 hitPosition)
+    {
+        //get angle between this game object and m_MyObject and take into account this game object's rotation
+        Vector2 m_MySecondVector = hitPosition - transform.position;
+        float m_SignedAngle = Vector2.Angle(m_MySecondVector, transform.right);
         Debug.DrawLine(Vector2.zero, m_MySecondVector, Color.blue);
-
-        //Log values of Vectors and angle in Console
-        //Debug.Log("MyFirstVector: " + m_MyFirstVector);
-        //Debug.Log("MySecondVector: "  + m_MySecondVector);
-        Debug.Log("Angle Between Objects: " + m_SignedAngle);
-        Debug.Log("sine " + Mathf.Sin((m_SignedAngle * Mathf.PI)/180));
-
-        if (m_SignedAngle > 160+gameObject.transform.rotation.eulerAngles.z && m_SignedAngle < 200+gameObject.transform.rotation.eulerAngles.z){
-                    Debug.Log("Tip Hit!!!");
-                }
-        //float angle = Vector2.SignedAngle(gameObject.transform.up, m_MyObject.transform.up);
-        //Debug.Log("angle " + angle);
+        //turn mysecondvector to local space
+        m_MySecondVector = transform.InverseTransformDirection(m_MySecondVector);
+        if (m_MySecondVector.y < 0)
+        {
+            m_SignedAngle = -m_SignedAngle;
+        }
+        
+        Debug.Log("Signed Angle: " + m_SignedAngle);
+        
+        if (m_SignedAngle > 160 && m_SignedAngle < 200){
+            Debug.Log("Tip Hit!!!");
+        }
+        return m_SignedAngle;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -54,7 +48,7 @@ public class EggImpact : MonoBehaviour
                 force += Mathf.Abs(col.GetContact(i).normalImpulse);
             }
             force /= col.contactCount;
-            Debug.Log("Impact force: " + force);
+            //Debug.Log("Impact force: " + force);
 
             if(force>.1f){
 
@@ -65,10 +59,8 @@ public class EggImpact : MonoBehaviour
                     amount++;
                 }
                 Vector2 averagePos = sum / amount;
-                
-                Vector2 hitVector = new Vector2(averagePos.x-gameObject.transform.position.x, averagePos.y-gameObject.transform.position.y);
-                float hitAngle = Vector2.SignedAngle(new Vector2(0,1), hitVector);
-                //Debug.DrawLine(gameObject.transform.position, m_MySecondVector, Color.blue);
+
+                float hitAngle = GetAngleOfImpact(averagePos);
 
                 if (hitAngle > 160+gameObject.transform.rotation.eulerAngles.z && hitAngle < 200+gameObject.transform.rotation.eulerAngles.z){
                     //Debug.Log("Tip Hit!!!");
