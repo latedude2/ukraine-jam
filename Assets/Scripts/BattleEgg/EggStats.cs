@@ -62,7 +62,7 @@ public class EggStats : MonoBehaviour
     {
         Progression progression = GameObject.Find("PlayerStats").GetComponent<Progression>();
         int level = progression.Level;
-        float levelMultiplier = (level-1) * 0.05f;   //5% per level increase to all stats
+        float levelMultiplier = level * 0.05f;   //5% per level increase to all stats
         EggThicknessTop = EggThicknessTop + (EggThicknessTop * levelMultiplier);
         EggThicknessBottomLeft = EggThicknessBottomLeft + (EggThicknessBottomLeft * levelMultiplier);
         EggThicknessBottomRight = EggThicknessBottomRight + (EggThicknessBottomRight * levelMultiplier);
