@@ -9,6 +9,7 @@ public class EggStats : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip[] audioClips;
+    [SerializeField] GameObject destructionParticle;
 
     //Values that change in battle
     public float currentHealthTop = 100f;
@@ -26,6 +27,8 @@ public class EggStats : MonoBehaviour
     public float EggThicknessTopRight = 100f;
     public float EggTipSharpness = 1f;
     public float EggGrip = 1f; //The bigger the grip the more force for the spring to break
+
+    public Texture2D tex;
 
     void Start()
     {
@@ -45,13 +48,14 @@ public class EggStats : MonoBehaviour
             EggTipSharpness = eggManager.EggTipSharpness;
             EggGrip = eggManager.EggGrip;
             GetComponent<SpriteRenderer>().sprite = eggManager.EggSprite;
-            GetComponent<SpriteRenderer>().color = eggManager.EggColor;
+            GetComponent<SpriteRenderer>().color = eggManager.EggColor;    
         }
 
         if(!isPlayer)
         {
             AdjustEnemyStatsBasedOnLevel();
         }
+        tex = GetComponent<SpriteRenderer>().sprite.texture;
     }
 
     public void AdjustEnemyStatsBasedOnLevel()
@@ -109,6 +113,13 @@ public class EggStats : MonoBehaviour
         if (isPlayer){
             GetComponent<EggPlayerUI>().UpdateUIHealth();
             GameObject.Find("Main Camera").GetComponent<CameraShake>().shakeDuration = 0.2f;
+        }
+
+        if (currentHealthTop <= 0 || currentHealthTopLeft <= 0 || currentHealthBottomRight <= 0 || currentHealthBottomLeft <= 0 || currentHealthTopRight <= 0){
+            GameObject burstParticle = Instantiate(destructionParticle, gameObject.transform.position, Quaternion.identity) as GameObject;
+            ParticleSystem.MainModule settings = burstParticle.GetComponent<ParticleSystem>().main;
+            settings.startColor = new ParticleSystem.MinMaxGradient(tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)]);
+            Destroy(gameObject);
         }
     }
 }
