@@ -65,16 +65,16 @@ public class EggImpact : MonoBehaviour
             float dist = Vector3.Distance(enemyEgg.transform.position, transform.position);
             if (dist < 1){
                 Time.timeScale = .1f;
-                //slowmoSource.volume = .4f;
-                //slowmoSource.pitch = .1f;
+                slowmoSource.volume = .7f;
+                slowmoSource.pitch = .1f;
             } else if (dist < 2){
                 Time.timeScale = .2f;
-                //slowmoSource.volume = 2*.4f-dist;
-                //slowmoSource.pitch = 2*.1f-dist;
+                slowmoSource.volume = Mathf.Lerp(.7f, .0f, dist-1);
+                slowmoSource.pitch = Mathf.Lerp(.1f, .8f, dist-1);
             } else {
                 Time.timeScale = 1.0f;
-                //slowmoSource.volume = 0;
-                //slowmoSource.pitch = 0;
+                slowmoSource.volume = 0;
+                slowmoSource.pitch = .8f;
             }
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         }
