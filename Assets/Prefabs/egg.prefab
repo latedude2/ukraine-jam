@@ -186,7 +186,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1726029469717999404}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6758c10222a48fa489d9ea999a49348c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -474,9 +474,9 @@ Rigidbody2D:
   m_AngularDrag: 0.5
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 6758c10222a48fa489d9ea999a49348c, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &46568478
 MonoBehaviour:
@@ -505,7 +505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef86f7741c1b6874583396cda1d822cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MyObject: {fileID: 0}
 --- !u!114 &8349598860931002356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +517,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afa97669542b9f4aa31f0b2ab179e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealthTop: 100
+  currentHealthBottomRight: 100
+  currentHealthBottomLeft: 100
+  currentHealthTopLeft: 100
+  currentHealthTopRight: 100
+  EggThicknessTop: 100
+  EggThicknessBottomRight: 100
+  EggThicknessBottomLeft: 100
+  EggThicknessTopLeft: 100
+  EggThicknessTopRight: 100
+  EggTipSharpness: 1
+  EggSlipperyness: 1
 --- !u!1 &2597390123050628739
 GameObject:
   m_ObjectHideFlags: 0

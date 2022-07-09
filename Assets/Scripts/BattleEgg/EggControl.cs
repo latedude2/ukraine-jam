@@ -29,10 +29,10 @@ public class EggControl : MonoBehaviour
             //Create 2d spring connecting the mouse position to where the mouse pressed the egg 
             spring = gameObject.AddComponent<SpringJoint2D>();
             spring.connectedBody = mouseFollower;
-            Debug.Log("setting anchor to: " + mousePosition);
+            //Debug.Log("setting anchor to: " + mousePosition);
             //convert mouse position to local space
             spring.anchor = transform.InverseTransformPoint(mousePosition);
-            Debug.Log("Anchor position: " + mousePosition);
+            //Debug.Log("Anchor position: " + mousePosition);
             spring.dampingRatio = damping;
             spring.frequency = eggFollowForce;
             spring.breakForce = 1000/eggSlipperyness;

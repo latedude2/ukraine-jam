@@ -63,7 +63,7 @@ public class EggImpact : MonoBehaviour
             force /= col.contactCount;
             //Debug.Log("Impact force: " + force);
 
-            if(force>.1f){
+            if(force > 1f){
 
                 Vector2 sum = new Vector2(0,0);
                 int amount = 0;
@@ -89,21 +89,18 @@ public class EggImpact : MonoBehaviour
                     targetHitZone = 4;
                 }
 
+                Debug.Log("Force: " + force);
+
                 if (hitAngle > hitZoneAngles[0] && hitAngle < hitZoneAngles[4]){
-                    Debug.Log("Tip Hit!!!");
-                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(0), targetHitZone);
+                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(0, force), targetHitZone);
                 } else if(hitAngle > hitZoneAngles[1] && hitAngle < hitZoneAngles[0]){
-                    Debug.Log("Right top!!!");
-                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(1), targetHitZone);
+                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(1, force), targetHitZone);
                 } else if(hitAngle > hitZoneAngles[2] && hitAngle < hitZoneAngles[1]){
-                    Debug.Log("Right Bottom!!!");
-                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(2), targetHitZone);
+                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(2, force), targetHitZone);
                 } else if(hitAngle > hitZoneAngles[3] && hitAngle < hitZoneAngles[2]){
-                    Debug.Log("Left Bottom!!!");
-                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(3), targetHitZone);
+                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(3, force), targetHitZone);
                 } else if(hitAngle > hitZoneAngles[4] || hitAngle < hitZoneAngles[3]){
-                    Debug.Log("Left Top!!!");
-                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(4), targetHitZone);
+                    col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(4, force), targetHitZone);
                 }
             }
         }

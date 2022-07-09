@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2010abe396878f542aac47db36aab70f, type: 3}
+    - target: {fileID: 1726029469717999407, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 6758c10222a48fa489d9ea999a49348c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
 --- !u!1 &157221363 stripped
@@ -260,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 10f800f26bcb4dc4eb658aedbe6d0e77, type: 3}
+    - target: {fileID: 1726029469717999407, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 6758c10222a48fa489d9ea999a49348c, type: 2}
     - target: {fileID: 6604346109080663831, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_GravityScale
       value: 1
