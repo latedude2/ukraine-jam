@@ -10,6 +10,7 @@ public class EggImpact : MonoBehaviour
 
     //clockwise around egg
     int[] hitZoneAngles = new int[5] {65,-10,-90,-170,115};
+    GameObject enemyEgg;
 
     EggStats eggStats;
 
@@ -50,6 +51,13 @@ public class EggImpact : MonoBehaviour
         }*/
 
         return m_SignedAngle;
+    }
+
+    void Slowmo(){
+        if(enemyEgg != null){
+            float dist = Vector3.Distance(enemyEgg.position, transform.position);
+
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
