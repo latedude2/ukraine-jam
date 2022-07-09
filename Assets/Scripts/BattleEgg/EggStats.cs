@@ -94,6 +94,7 @@ public class EggStats : MonoBehaviour
 
         if (isPlayer){
             GetComponent<EggPlayerUI>().UpdateUIHealth();
+            GameObject.Find("Main Camera").GetComponent<CameraShake>().shakeDuration = 0.2f;
         }
     }
 }
