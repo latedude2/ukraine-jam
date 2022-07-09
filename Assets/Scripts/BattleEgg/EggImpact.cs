@@ -11,6 +11,7 @@ public class EggImpact : MonoBehaviour
     //clockwise around egg
     int[] hitZoneAngles = new int[5] {65,-10,-90,-170,115};
     GameObject enemyEgg;
+    AudioSource slowmoSource;
 
     EggStats eggStats;
     private float fixedDeltaTime;
@@ -18,6 +19,7 @@ public class EggImpact : MonoBehaviour
     void Start()
     {
         eggStats = GetComponent<EggStats>();
+        slowmoSource = GameObject.FindWithTag("SlowmoSounds").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -56,7 +58,6 @@ public class EggImpact : MonoBehaviour
     }
     void Awake()
     {
-        // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
         this.fixedDeltaTime = Time.fixedDeltaTime;
     }
     void Slowmo(){
@@ -64,13 +65,17 @@ public class EggImpact : MonoBehaviour
             float dist = Vector3.Distance(enemyEgg.transform.position, transform.position);
             Debug.Log(dist);
             if (dist < 1){
-                Time.timeScale = .15f;
-            
+                Time.timeScale = .1f;
+                //slowmoSource.volume = .4f;
+                //slowmoSource.pitch = .1f;
             } else if (dist < 2){
-                Time.timeScale = .3f;
-            
+                Time.timeScale = .2f;
+                //slowmoSource.volume = 2*.4f-dist;
+                //slowmoSource.pitch = 2*.1f-dist;
             } else {
                 Time.timeScale = 1.0f;
+                //slowmoSource.volume = 0;
+                //slowmoSource.pitch = 0;
             }
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         }
@@ -88,7 +93,7 @@ public class EggImpact : MonoBehaviour
             force /= col.contactCount;
             //Debug.Log("Impact force: " + force);
 
-            if(force > 10f){
+            if(force > 5f){
 
                 Vector2 sum = new Vector2(0,0);
                 int amount = 0;
