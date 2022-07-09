@@ -55,8 +55,10 @@ public class EggImpact : MonoBehaviour
 
     void Slowmo(){
         if(enemyEgg != null){
-            float dist = Vector3.Distance(enemyEgg.position, transform.position);
+            float dist = Vector3.Distance(enemyEgg.transform.position, transform.position);
+            if (dist < 10){
 
+            }
         }
     }
 
