@@ -28,6 +28,23 @@ public class EggStatView : MonoBehaviour
         thicknessTopLeft = GameObject.Find("TopLeftThickness").GetComponent<Text>();
         thicknessTopRight = GameObject.Find("TopRightThickness").GetComponent<Text>();
         //if loaded scene is upgrade
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "ChooseEgg")
+        {
+            ShowHoveredEggStats();
+        }
+        else if (SceneManager.GetActiveScene().name == "UpgradeEgg")
+        {
+            ShowStatsInUpgradeScreen();
+        }
+    }
+
+    void ShowStatsInUpgradeScreen()
+    {
         if (SceneManager.GetActiveScene().name == "UpgradeEgg")
         {
             EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
@@ -38,15 +55,6 @@ public class EggStatView : MonoBehaviour
             thicknessBottomLeft.text = eggManager.EggThicknessBottomLeft.ToString();
             thicknessTopLeft.text = eggManager.EggThicknessTopLeft.ToString();
             thicknessTopRight.text = eggManager.EggThicknessTopRight.ToString();
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "ChooseEgg")
-        {
-            ShowHoveredEggStats();
         }
     }
 

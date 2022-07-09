@@ -7,8 +7,15 @@ public class DontDestroy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //dont destroy on scene load
-        DontDestroyOnLoad(gameObject);
+        //implement singleton
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
 }

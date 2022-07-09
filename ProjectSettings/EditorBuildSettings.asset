@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle.unity
     guid: eb0619d1d2bfffb4c803894af17b3122
+  - enabled: 1
+    path: Assets/Scenes/UpgradeEgg.unity
+    guid: 4a12fb482f5074644839fecebef3175a
   m_configObjects: {}
