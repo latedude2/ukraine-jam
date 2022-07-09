@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EggStats : MonoBehaviour
 {
-    //-----------------------
+    //-----------------------''
 
     //Values that change in battle
     float currentHealthTop = 100f;
@@ -38,5 +38,34 @@ public class EggStats : MonoBehaviour
             EggSlipperyness = eggManager.EggSlipperyness;
         }
     }
-    
+
+    public float CalcImpactValue(int side) {
+        if (side == 0) {    //tip
+            return EggThicknessTop * .1f * EggTipSharpness;
+        } else if (side == 1){  //right top
+            return EggThicknessTopRight * .1f;
+        } else if (side == 2){  //right bottom
+            return EggThicknessBottomRight * .1f;
+        } else if (side == 3){  //left bottom
+            return EggThicknessBottomLeft * .1f;
+        } else if (side == 4){  //left top
+            return EggThicknessTopLeft * .1f;
+        }
+        return 0;
+    }
+
+    public void TakeImpactDamage(float incomingDamage, int side) {
+        Debug.Log("Incoming damage: " + incomingDamage + "; Side: " + side);
+        if (side == 0) {    //tip
+            currentHealthTop -= incomingDamage;
+        } else if (side == 1){  //right top
+            currentHealthTopRight -= incomingDamage;
+        } else if (side == 2){  //right bottom
+            currentHealthBottomRight -= incomingDamage;
+        } else if (side == 3){  //left bottom
+            currentHealthBottomLeft -= incomingDamage;
+        } else if (side == 4){  //left top
+            currentHealthTopLeft -= incomingDamage;
+        }
+    }
 }
