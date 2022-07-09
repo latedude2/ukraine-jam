@@ -45,17 +45,17 @@ public class EggStats : MonoBehaviour
         }
     }
 
-    public float CalcImpactValue(int side) {
+    public float CalcImpactValue(int side, float force) {
         if (side == 0) {    //tip
-            return EggThicknessTop * .1f * EggTipSharpness;
+            return force * EggThicknessTop * .1f * EggTipSharpness;
         } else if (side == 1){  //right top
-            return EggThicknessTopRight * .1f;
+            return force * EggThicknessTopRight * .1f;
         } else if (side == 2){  //right bottom
-            return EggThicknessBottomRight * .1f;
+            return force * EggThicknessBottomRight * .1f;
         } else if (side == 3){  //left bottom
-            return EggThicknessBottomLeft * .1f;
+            return force * EggThicknessBottomLeft * .1f;
         } else if (side == 4){  //left top
-            return EggThicknessTopLeft * .1f;
+            return force * EggThicknessTopLeft * .1f;
         }
         return 0;
     }
@@ -64,29 +64,18 @@ public class EggStats : MonoBehaviour
         Debug.Log("Incoming damage: " + incomingDamage + "; Side: " + side);
         if (side == 0) {    //tip
             currentHealthTop -= incomingDamage;
-            if (isPlayer){
-                GetComponent<EggPlayerUI>().UpdateUIHealth();
-            }
         } else if (side == 1){  //right top
             currentHealthTopRight -= incomingDamage;
-            if (isPlayer){
-                GetComponent<EggPlayerUI>().UpdateUIHealth();
-            }
         } else if (side == 2){  //right bottom
             currentHealthBottomRight -= incomingDamage;
-            if (isPlayer){
-                GetComponent<EggPlayerUI>().UpdateUIHealth();
-            }
         } else if (side == 3){  //left bottom
             currentHealthBottomLeft -= incomingDamage;
-            if (isPlayer){
-                GetComponent<EggPlayerUI>().UpdateUIHealth();
-            }
         } else if (side == 4){  //left top
-            currentHealthTopLeft -= incomingDamage;
-            if (isPlayer){
-                GetComponent<EggPlayerUI>().UpdateUIHealth();
-            }
+            currentHealthTopLeft -= incomingDamage; 
+        }
+
+        if (isPlayer){
+            GetComponent<EggPlayerUI>().UpdateUIHealth();
         }
     }
 }

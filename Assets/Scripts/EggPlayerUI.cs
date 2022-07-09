@@ -20,10 +20,10 @@ public class EggPlayerUI : MonoBehaviour
     }
 
     public void UpdateUIHealth(){
-        eggUIHealth[0].GetComponent<Text>().text = GetComponent<EggStats>().currentHealthTop + "%";
-        eggUIHealth[1].GetComponent<Text>().text = GetComponent<EggStats>().currentHealthTopRight + "%";
-        eggUIHealth[2].GetComponent<Text>().text = GetComponent<EggStats>().currentHealthBottomRight + "%";
-        eggUIHealth[3].GetComponent<Text>().text = GetComponent<EggStats>().currentHealthBottomLeft + "%";
-        eggUIHealth[4].GetComponent<Text>().text = GetComponent<EggStats>().currentHealthTopLeft + "%";
+        eggUIHealth[0].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthTop) + "%";
+        eggUIHealth[1].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthTopRight) + "%";
+        eggUIHealth[2].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthBottomRight) + "%";
+        eggUIHealth[3].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthBottomLeft) + "%";
+        eggUIHealth[4].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthTopLeft) + "%";
     }
 }
