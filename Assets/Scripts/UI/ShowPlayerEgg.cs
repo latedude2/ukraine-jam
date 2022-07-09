@@ -9,6 +9,7 @@ public class ShowPlayerEgg : MonoBehaviour
     void Start()
     {
         GetComponent<Image>().sprite = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggSprite;
+        GetComponent<Image>().color = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggColor;
     }
 
 }
