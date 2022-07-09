@@ -8,7 +8,11 @@ public class BattleState : MonoBehaviour
     // Start is called before the first frame update
     EggStats player;
     EggStats enemy;
-
+    private float fixedDeltaTime;
+    void Awake()
+    {
+        this.fixedDeltaTime = Time.fixedDeltaTime;
+    }
     void Start()
     {
         player = GameObject.Find("Egg - Player").GetComponent<EggStats>();
@@ -70,11 +74,15 @@ public class BattleState : MonoBehaviour
 
     void LoadLoseScene()
     {
+        Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         SceneManager.LoadScene("Lose");
     }
 
     void LoadUpgradeScene()
     {
+        Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         SceneManager.LoadScene("UpgradeEgg");
     }
 }

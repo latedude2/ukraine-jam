@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 46568478}
   - component: {fileID: 1032456830}
   - component: {fileID: 8349598860931002356}
+  - component: {fileID: 3771690946175677490}
   m_Layer: 6
   m_Name: egg
   m_TagString: Egg
@@ -260,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eggFollowForce: 2.5
-  eggSlipperyness: 1
+  eggGrip: 1
   damping: 0.5
 --- !u!114 &1032456830
 MonoBehaviour:
@@ -286,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afa97669542b9f4aa31f0b2ab179e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips: []
   currentHealthTop: 100
   currentHealthBottomRight: 100
   currentHealthBottomLeft: 100
@@ -297,7 +299,24 @@ MonoBehaviour:
   EggThicknessTopLeft: 100
   EggThicknessTopRight: 100
   EggTipSharpness: 1
-  EggSlipperyness: 1
+  EggGrip: 1
+--- !u!114 &3771690946175677490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726029469717999404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b246aa12aa005b84495cef21d6a39b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topDamage: {fileID: 397394328963831548}
+  bottomRightDamage: {fileID: 1337697716802037315}
+  bottomLeftDamage: {fileID: 4561173532673623544}
+  topLeftDamage: {fileID: 6689793678335976481}
+  topRightDamage: {fileID: 5929290206157168912}
 --- !u!1 &2597390123050628739
 GameObject:
   m_ObjectHideFlags: 0

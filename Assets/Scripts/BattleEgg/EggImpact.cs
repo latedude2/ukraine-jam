@@ -11,17 +11,21 @@ public class EggImpact : MonoBehaviour
     //clockwise around egg
     int[] hitZoneAngles = new int[5] {65,-10,-90,-170,115};
     GameObject enemyEgg;
+    AudioSource slowmoSource;
 
     EggStats eggStats;
+    private float fixedDeltaTime;
 
     void Start()
     {
         eggStats = GetComponent<EggStats>();
+        slowmoSource = GameObject.FindWithTag("SlowmoSounds").GetComponent<AudioSource>();
     }
 
     void Update()
     {
         //GetAngleOfImpact(m_MyObject.transform.position);
+        Slowmo();
     }
 
     float GetAngleOfImpact(Vector3 hitPosition, GameObject target)
@@ -52,11 +56,27 @@ public class EggImpact : MonoBehaviour
 
         return m_SignedAngle;
     }
-
+    void Awake()
+    {
+        this.fixedDeltaTime = Time.fixedDeltaTime;
+    }
     void Slowmo(){
         if(enemyEgg != null){
-            //float dist = Vector3.Distance(enemyEgg.position, transform.position);
-
+            float dist = Vector3.Distance(enemyEgg.transform.position, transform.position);
+            if (dist < 1){
+                Time.timeScale = .1f;
+                //slowmoSource.volume = .4f;
+                //slowmoSource.pitch = .1f;
+            } else if (dist < 2){
+                Time.timeScale = .2f;
+                //slowmoSource.volume = 2*.4f-dist;
+                //slowmoSource.pitch = 2*.1f-dist;
+            } else {
+                Time.timeScale = 1.0f;
+                //slowmoSource.volume = 0;
+                //slowmoSource.pitch = 0;
+            }
+            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         }
     }
 
@@ -64,6 +84,7 @@ public class EggImpact : MonoBehaviour
     {
         if (col.gameObject.tag == "Egg")
         {
+            enemyEgg = col.gameObject;
             float force = 0;
             for(int i = 0; i < col.contactCount; i++){
                 force += Mathf.Abs(col.GetContact(i).normalImpulse);
@@ -71,7 +92,7 @@ public class EggImpact : MonoBehaviour
             force /= col.contactCount;
             //Debug.Log("Impact force: " + force);
 
-            if(force > 10f){
+            if(force > 5f){
 
                 Vector2 sum = new Vector2(0,0);
                 int amount = 0;
@@ -99,7 +120,7 @@ public class EggImpact : MonoBehaviour
 
                 //!!!DOVI USE AVERAGEPOS FOR IMPACT POSITION HERE!!!
 
-                Debug.Log("Force: " + force);
+                //Debug.Log("Force: " + force);
 
                 if (hitAngle > hitZoneAngles[0] && hitAngle < hitZoneAngles[4]){
                     col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(0, force), targetHitZone);
