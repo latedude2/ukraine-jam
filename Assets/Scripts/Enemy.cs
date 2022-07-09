@@ -10,13 +10,20 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] List<Sprite> enemySprites;
 
+    EggStats eggStats;
+
     public float speed = 200f;
 
     void Start()
     {
         playerEgg = GameObject.Find("Egg - Player");
         rb = GetComponent<Rigidbody2D>();
-        RandomizeSkin();
+        eggStats = GetComponent<EggStats>();
+        
+        if (!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
+        {
+            RandomizeSkin();
+        }
     }
 
     void FixedUpdate()
@@ -43,6 +50,7 @@ public class Enemy : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = enemySprites[Random.Range(0, enemySprites.Count)];
         GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.2f, 1f), Random.Range(0.2f, 1f), Random.Range(0.2f, 1f));
+        eggStats.tex = GetComponent<SpriteRenderer>().sprite.texture;
     }
 
 }
