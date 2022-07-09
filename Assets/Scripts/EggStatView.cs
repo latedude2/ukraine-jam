@@ -14,10 +14,13 @@ public class EggStatView : MonoBehaviour
     Text thicknessBottomRight;
     Text thicknessTopRight;
 
+    Progression progression;
+
 
     void Start()
     {
         //get reference to Tip Sharpness gameobject
+        progression = GameObject.Find("PlayerStats").GetComponent<Progression>();
         tipSharpness = GameObject.Find("TipSharpness").GetComponent<Text>();
         grip = GameObject.Find("EggSlipperyness").GetComponent<Text>();
         thicknessTop = GameObject.Find("TopThickness").GetComponent<Text>();
@@ -88,7 +91,14 @@ public class EggStatView : MonoBehaviour
                     eggManager.EggSprite = chosenEggManager.GetComponent<SpriteRenderer>().sprite;
                     eggManager.EggColor = chosenEggManager.GetComponent<SpriteRenderer>().color;
                     //Load battle scene
-                    SceneManager.LoadScene("Battle");
+                    if (GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
+                    {
+                        SceneManager.LoadScene("StoryBattle " + (progression.Level + 1));
+                    }
+                    else 
+                    {
+                        SceneManager.LoadScene("Battle");
+                    }
                 }
             }
         }

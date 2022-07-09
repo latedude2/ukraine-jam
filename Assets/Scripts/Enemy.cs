@@ -19,7 +19,11 @@ public class Enemy : MonoBehaviour
         playerEgg = GameObject.Find("Egg - Player");
         rb = GetComponent<Rigidbody2D>();
         eggStats = GetComponent<EggStats>();
-        RandomizeSkin();
+        
+        if (!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
+        {
+            RandomizeSkin();
+        }
     }
 
     void FixedUpdate()

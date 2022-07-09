@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Progression : MonoBehaviour
 {
-    public int Level = 1;
-    void IncreaseLevel()
+    public int Level = 0;
+    public void IncreaseLevel()
     {
         Level++;
     }
