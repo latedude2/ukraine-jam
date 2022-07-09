@@ -50,25 +50,24 @@ public class EggStatView : MonoBehaviour
                 eggs[0].transform.gameObject.GetComponent<UIEgg>().Select(true);
                 EggManager chosenEggManager = eggs[0].transform.gameObject.GetComponent<EggManager>();
                 thicknessTop.text = chosenEggManager.EggThicknessTop.ToString();
-                thicknessBottomRight.text = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessBottomRight.ToString();
-                thicknessBottomLeft.text = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessBottomLeft.ToString();
-                thicknessTopLeft.text = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessTopLeft.ToString();
-                thicknessTopRight.text = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessTopRight.ToString();
-                slipperyness.text = eggs[0].transform.gameObject.GetComponent<EggManager>().EggSlipperyness.ToString();
-                tipSharpness.text = eggs[0].transform.gameObject.GetComponent<EggManager>().EggTipSharpness.ToString();
+                thicknessBottomRight.text = chosenEggManager.EggThicknessBottomRight.ToString();
+                thicknessBottomLeft.text = chosenEggManager.EggThicknessBottomLeft.ToString();
+                thicknessTopLeft.text = chosenEggManager.EggThicknessTopLeft.ToString();
+                thicknessTopRight.text = chosenEggManager.EggThicknessTopRight.ToString();
+                slipperyness.text = chosenEggManager.EggSlipperyness.ToString();
+                tipSharpness.text = chosenEggManager.EggTipSharpness.ToString();
                 if(Input.GetMouseButtonDown(0))
                 {
                     EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-                    eggManager.EggSlipperyness = eggs[0].transform.gameObject.GetComponent<EggManager>().EggSlipperyness;
-                    eggManager.EggTipSharpness = eggs[0].transform.gameObject.GetComponent<EggManager>().EggTipSharpness;
-                    eggManager.EggThicknessTop = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessTop;
-                    eggManager.EggThicknessBottomRight = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessBottomRight;
-                    eggManager.EggThicknessBottomLeft = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessBottomLeft;
-                    eggManager.EggThicknessTopLeft = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessTopLeft;
-                    eggManager.EggThicknessTopRight = eggs[0].transform.gameObject.GetComponent<EggManager>().EggThicknessTopRight;
+                    eggManager.EggSlipperyness = chosenEggManager.EggSlipperyness;
+                    eggManager.EggTipSharpness = chosenEggManager.EggTipSharpness;
+                    eggManager.EggThicknessTop = chosenEggManager.EggThicknessTop;
+                    eggManager.EggThicknessBottomRight = chosenEggManager.EggThicknessBottomRight;
+                    eggManager.EggThicknessBottomLeft = chosenEggManager.EggThicknessBottomLeft;
+                    eggManager.EggThicknessTopLeft = chosenEggManager.EggThicknessTopLeft;
+                    eggManager.EggThicknessTopRight = chosenEggManager.EggThicknessTopRight;
                     
                     //Load battle scene
-                    Debug.Log("Tip sharpness for player: " + GameObject.Find("PlayerStats").GetComponent<EggManager>().EggTipSharpness);
                     SceneManager.LoadScene("Battle");
                 }
             }

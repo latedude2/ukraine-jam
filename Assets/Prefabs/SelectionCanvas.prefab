@@ -157,7 +157,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!1 &1224055856995726447
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +510,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!1 &1224055857207511422
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +591,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!1 &1224055857321331236
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +672,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!1 &1224055857637442874
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +832,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!1 &1224055857832583763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1071,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!1 &1224055858746680790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1152,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CHOOSE YOUR EGG!
+  m_Text: '
+
+'
 --- !u!1 &1224055858861598944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,7 +1233,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!1 &1224055858902229335
 GameObject:
   m_ObjectHideFlags: 0
