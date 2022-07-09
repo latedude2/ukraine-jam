@@ -89,6 +89,8 @@ public class EggImpact : MonoBehaviour
                     targetHitZone = 4;
                 }
 
+                //!!!DOVI USE AVERAGEPOS FOR IMPACT POSITION HERE!!!
+
                 Debug.Log("Force: " + force);
 
                 if (hitAngle > hitZoneAngles[0] && hitAngle < hitZoneAngles[4]){
