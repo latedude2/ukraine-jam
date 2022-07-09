@@ -15,7 +15,9 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadBattleScene()
     {
+        if(!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
         SceneManager.LoadScene("Battle");
+        else LoadNextBattleStory();
     }
 
     public void LoadChooseScene()
