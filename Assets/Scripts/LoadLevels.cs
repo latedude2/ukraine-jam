@@ -44,7 +44,8 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadMainMenuScene()
     {
-        GameObject.Find("PlayerStats").GetComponent<Progression>().Level = 0;
+        Progression progression = GameObject.Find("PlayerStats").GetComponent<Progression>();
+        if(progression != null) progression.Level = 0;
         SceneManager.LoadScene("MainMenu");
     }
 }
