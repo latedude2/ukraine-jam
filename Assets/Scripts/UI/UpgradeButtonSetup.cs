@@ -7,7 +7,7 @@ public class UpgradeButtonSetup : MonoBehaviour
 {
     public Button TipSharpnessButton, ShellTopButton, TopRightShellButton;
     public Button TopLeftShellButton, BottomRightShellButton, BottomLeftShellButton;
-    public Button EggSlipButton;
+    public Button EggGripButton;
 
     int upgradesLeft = 5;
 
@@ -23,7 +23,7 @@ public class UpgradeButtonSetup : MonoBehaviour
         TopLeftShellButton.onClick.AddListener(UpgradeTopLeftShell);
         BottomRightShellButton.onClick.AddListener(UpgradeBottomRightShell);
         BottomLeftShellButton.onClick.AddListener(UpgradeBottomLeftShell);
-        EggSlipButton.onClick.AddListener(UpgradeEggSlip);
+        EggGripButton.onClick.AddListener(UpgradeEggGrip);
     }
 
     void UpgradeTipShrapness()
@@ -57,9 +57,9 @@ public class UpgradeButtonSetup : MonoBehaviour
         eggUpgrade.IncreaseEggBottomLeftThickness();
         DoUpgrade();
     }
-    void UpgradeEggSlip()
+    void UpgradeEggGrip()
     {
-        eggUpgrade.IncreaseEggSlipperyness();
+        eggUpgrade.IncreaseEggGrip();
         DoUpgrade();
     }
 
@@ -74,7 +74,7 @@ public class UpgradeButtonSetup : MonoBehaviour
             Destroy(TopLeftShellButton);
             Destroy(BottomRightShellButton);
             Destroy(BottomLeftShellButton);
-            Destroy(EggSlipButton);
+            Destroy(EggGripButton);
         }
     }
 

@@ -22,7 +22,7 @@ public class EggStats : MonoBehaviour
     public float EggThicknessTopLeft = 100f;
     public float EggThicknessTopRight = 100f;
     public float EggTipSharpness = 1f;
-    public float EggSlipperyness = 1f; //The bigger the slipperyness the less force for the spring to break
+    public float EggGrip = 1f; //The bigger the grip the more force for the spring to break
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class EggStats : MonoBehaviour
             isPlayer = true;
         }
         //if egg is player, take stats from manager
-        if(GetComponent<EggControl>() != null) 
+        if(isPlayer) 
         {
             EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
             EggThicknessTop = eggManager.EggThicknessTop;
@@ -39,10 +39,28 @@ public class EggStats : MonoBehaviour
             EggThicknessTopLeft = eggManager.EggThicknessTopLeft;
             EggThicknessTopRight = eggManager.EggThicknessTopRight;
             EggTipSharpness = eggManager.EggTipSharpness;
-            EggSlipperyness = eggManager.EggSlipperyness;
+            EggGrip = eggManager.EggGrip;
             GetComponent<SpriteRenderer>().sprite = eggManager.EggSprite;
             GetComponent<SpriteRenderer>().color = eggManager.EggColor;
         }
+
+        if(!isPlayer)
+        {
+            AdjustEnemyStatsBasedOnLevel();
+        }
+    }
+
+    public void AdjustEnemyStatsBasedOnLevel()
+    {
+        Progression progression = GameObject.Find("PlayerStats").GetComponent<Progression>();
+        int level = progression.Level;
+        float levelMultiplier = level * 0.1f;   //10% per level increase to all stats
+        EggThicknessTop = EggThicknessTop + (EggThicknessTop * levelMultiplier);
+        EggThicknessBottomLeft = EggThicknessBottomLeft + (EggThicknessBottomLeft * levelMultiplier);
+        EggThicknessBottomRight = EggThicknessBottomRight + (EggThicknessBottomRight * levelMultiplier);
+        EggThicknessTopLeft = EggThicknessTopLeft + (EggThicknessTopLeft * levelMultiplier);
+        EggThicknessTopRight = EggThicknessTopRight + (EggThicknessTopRight * levelMultiplier);
+        EggTipSharpness = EggTipSharpness + (EggTipSharpness * levelMultiplier);
     }
 
     public float CalcImpactValue(int side, float force) {

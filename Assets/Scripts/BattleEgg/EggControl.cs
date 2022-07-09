@@ -6,7 +6,7 @@ public class EggControl : MonoBehaviour
 {
 
     public float eggFollowForce = 1f;
-    public float eggSlipperyness = 1f; //The bigger the slipperyness the less force for the spring to break
+    public float eggGrip = 1f; //The bigger the grip the more force for the spring to break
 
     [SerializeField] float damping = 0.7f;
     bool eggIsFollowing = false;
@@ -15,7 +15,7 @@ public class EggControl : MonoBehaviour
     SpringJoint2D spring;
     Rigidbody2D mouseFollower;
     void Start() {
-        eggSlipperyness = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggSlipperyness;
+        eggGrip = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggGrip;
         mouseFollower = GameObject.Find("MouseFollower").GetComponent<Rigidbody2D>();
     }
 
@@ -36,7 +36,7 @@ public class EggControl : MonoBehaviour
             //Debug.Log("Anchor position: " + mousePosition);
             spring.dampingRatio = damping;
             spring.frequency = eggFollowForce;
-            spring.breakForce = 1000/eggSlipperyness;
+            spring.breakForce = eggGrip * 1000f;
             spring.distance = 0;
             spring.autoConfigureDistance = false;
         }
