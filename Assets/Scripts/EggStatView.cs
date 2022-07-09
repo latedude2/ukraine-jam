@@ -9,7 +9,7 @@ public class EggStatView : MonoBehaviour
     public GameObject[] eggs;
 
     Text tipSharpness;
-    Text slipperyness;
+    Text grip;
     Text thicknessTop;
     Text thicknessBottomRight;
     Text thicknessBottomLeft;
@@ -21,7 +21,7 @@ public class EggStatView : MonoBehaviour
     {
         //get reference to Tip Sharpness gameobject
         tipSharpness = GameObject.Find("TipSharpness").GetComponent<Text>();
-        slipperyness = GameObject.Find("EggSlipperyness").GetComponent<Text>();
+        grip = GameObject.Find("EggSlipperyness").GetComponent<Text>();
         thicknessTop = GameObject.Find("TopThickness").GetComponent<Text>();
         thicknessBottomRight = GameObject.Find("BottomRightThickness").GetComponent<Text>();
         thicknessBottomLeft = GameObject.Find("BottomLeftThickness").GetComponent<Text>();
@@ -49,7 +49,7 @@ public class EggStatView : MonoBehaviour
         {
             EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
             tipSharpness.text = eggManager.EggTipSharpness.ToString();
-            slipperyness.text = eggManager.EggSlipperyness.ToString();
+            grip.text = eggManager.EggGrip.ToString();
             thicknessTop.text = eggManager.EggThicknessTop.ToString();
             thicknessBottomRight.text = eggManager.EggThicknessBottomRight.ToString();
             thicknessBottomLeft.text = eggManager.EggThicknessBottomLeft.ToString();
@@ -81,12 +81,12 @@ public class EggStatView : MonoBehaviour
                 thicknessBottomLeft.text = chosenEggManager.EggThicknessBottomLeft.ToString();
                 thicknessTopLeft.text = chosenEggManager.EggThicknessTopLeft.ToString();
                 thicknessTopRight.text = chosenEggManager.EggThicknessTopRight.ToString();
-                slipperyness.text = chosenEggManager.EggSlipperyness.ToString();
+                grip.text = chosenEggManager.EggGrip.ToString();
                 tipSharpness.text = chosenEggManager.EggTipSharpness.ToString();
                 if(Input.GetMouseButtonDown(0))
                 {
                     EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-                    eggManager.EggSlipperyness = chosenEggManager.EggSlipperyness;
+                    eggManager.EggGrip = chosenEggManager.EggGrip;
                     eggManager.EggTipSharpness = chosenEggManager.EggTipSharpness;
                     eggManager.EggThicknessTop = chosenEggManager.EggThicknessTop;
                     eggManager.EggThicknessBottomRight = chosenEggManager.EggThicknessBottomRight;

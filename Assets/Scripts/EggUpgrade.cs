@@ -40,9 +40,9 @@ public class EggUpgrade : MonoBehaviour
         eggManager.EggTipSharpness += .1f;
     }
 
-    public void IncreaseEggSlipperyness()
+    public void IncreaseEggGrip()
     {
         EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-        eggManager.EggSlipperyness += 1;
+        eggManager.EggGrip += 1;
     }
 }

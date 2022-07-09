@@ -13,7 +13,7 @@ public class EggManager : MonoBehaviour
     public float EggThicknessTopLeft = 100f;
     public float EggThicknessTopRight = 100f;
     public float EggTipSharpness = 1f;
-    public float EggSlipperyness = 1f; //The bigger the slipperyness the less force for the spring to break
+    public float EggGrip = 1f; //The bigger the grip the more force for the spring to break
     public Sprite EggSprite;
     public Color EggColor;
 }
