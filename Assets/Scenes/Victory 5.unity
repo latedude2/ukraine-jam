@@ -424,5 +424,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasVictory
       objectReference: {fileID: 0}
+    - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_Text
+      value: 'I am sure the two can share the crown. I can''t live without bigos
+        or borsch. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_Text
+      value: This egg really miscalculated the risks. Slava Ukraini!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
