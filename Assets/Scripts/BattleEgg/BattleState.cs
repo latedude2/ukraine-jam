@@ -76,16 +76,15 @@ public class BattleState : MonoBehaviour
 
     IEnumerator LoadLoseScene()
     {
+        yield return new WaitForSeconds(2);
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Lose");
     }
 
     IEnumerator LoadNextScene()
     {
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         progression.IncreaseLevel();
