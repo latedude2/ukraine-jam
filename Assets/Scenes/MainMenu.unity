@@ -265,7 +265,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 646927922}
         m_TargetAssemblyTypeName: LoadLevels, Assembly-CSharp
-        m_MethodName: LoadChooseScene
+        m_MethodName: LoadCreditsScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
