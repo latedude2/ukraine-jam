@@ -346,15 +346,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -125.8
+      value: -125.68
       objectReference: {fileID: 0}
     - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 114.4
+      value: 116.1
       objectReference: {fileID: 0}
     - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 191.3
+      value: 199.5
       objectReference: {fileID: 0}
     - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_SizeDelta.y
@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 182.3
+      value: 192.3
       objectReference: {fileID: 0}
     - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -458,8 +458,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
-      value: "Correct! The Czech Republic egg enters the arena in its \u0160koda
-        automobile. What a show-off."
+      value: "Correct! The Czechia egg enters the arena in its \u0160koda automobile.
+        What a show-off."
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_FontData.m_Font
@@ -476,7 +476,7 @@ PrefabInstance:
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
       value: Hungary is now Eszter-gone! Once again our rising champion proves their
-        worth. Before the finalist, there is one more challenge - Czech Republic.
+        worth. Before the finalist, there is one more challenge - Czechia.
       objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_FontData.m_Font
