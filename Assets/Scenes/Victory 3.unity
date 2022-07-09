@@ -336,6 +336,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 216.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -125.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 116.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 199.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 192.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 92.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929881415081915, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -426,21 +458,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
-      value: "Correct! The Czech Republic egg enters the arena in its \u0160koda
-        automobile. What a show-off."
+      value: "Correct! The Czechia egg enters the arena in its \u0160koda automobile.
+        What a show-off."
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
+    - target: {fileID: 7081929881544581861, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 197.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081929882399961646, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -122
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
       value: Hungary is now Eszter-gone! Once again our rising champion proves their
-        worth. Before the finalist, there is one more challenge - Czech Republic.
+        worth. Before the finalist, there is one more challenge - Czechia.
       objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
+    - target: {fileID: 7081929882704644521, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 51c5021819f37654085fb39ecffc2316, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}

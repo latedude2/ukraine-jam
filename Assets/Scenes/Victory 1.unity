@@ -336,6 +336,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 218.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 56.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -148.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 119.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 216.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 75.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 173.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 74.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929881415081915, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -435,6 +467,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
+    - target: {fileID: 7081929882399961646, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -145.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081929882399961646, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 85.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
       value: 'No wonder Bulgarians call yogurt the "sour milk". This battle has really
@@ -446,5 +486,9 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
+    - target: {fileID: 7081929882704644521, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb3d3fa9b76370c448d654d9fad71610, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}

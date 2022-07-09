@@ -33,6 +33,6 @@ public class EggUpgrade : MonoBehaviour
     public void IncreaseEggGrip()
     {
         EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-        eggManager.EggGrip += 1;
+        eggManager.EggGrip += .3f;
     }
 }

@@ -15,7 +15,9 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadBattleScene()
     {
+        if(!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
         SceneManager.LoadScene("Battle");
+        else LoadNextBattleStory();
     }
 
     public void LoadChooseScene()
@@ -42,7 +44,8 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadMainMenuScene()
     {
-        GameObject.Find("PlayerStats").GetComponent<Progression>().Level = 0;
+        GameObject playerStats = GameObject.Find("PlayerStats");
+        if(playerStats != null) playerStats.GetComponent<Progression>().Level = 0;
         SceneManager.LoadScene("MainMenu");
     }
 }
