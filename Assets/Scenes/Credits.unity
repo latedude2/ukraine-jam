@@ -789,7 +789,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -802,9 +802,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Game made by:\nSimonas \u010Ceponis\nMikkel Munk\nViktorija Ju\u010Dait\u0117\nDovil\u0117
-    Perednyt\u0117\nKristinn Bragi Gar\xF0arsson\n\nThe bravery of the Ukrainian
-    people inspired us to work on this game.\nPlease consider financially supporting
-    Ukraine. "
+    Perednyt\u0117\nKristinn Bragi Gar\xF0arsson\n\nThe bravery of Ukrainian people
+    inspired us to work on this game.\nPlease consider financially supporting Ukraine. "
 --- !u!222 &2114987734
 CanvasRenderer:
   m_ObjectHideFlags: 0
