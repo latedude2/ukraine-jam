@@ -336,6 +336,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 220.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 35.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -140.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 132.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 193
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 52.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 165.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 91.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929881415081915, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -433,6 +465,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
+    - target: {fileID: 7081929882399961646, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -134.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
       value: This egg really miscalculated the risks. Slava Ukraini!

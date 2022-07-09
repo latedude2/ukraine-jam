@@ -336,6 +336,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 214.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -143
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 166.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 86.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929881415081915, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -435,6 +463,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: cd61852855c9fe64ba7f235f14ed8a0c, type: 3}
+    - target: {fileID: 7081929881544581861, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 76.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081929882399961646, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -143
+      objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
       value: Romania has faster internet than the United States. They can't even
