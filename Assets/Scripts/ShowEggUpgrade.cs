@@ -8,5 +8,6 @@ public class ShowEggUpgrade : MonoBehaviour
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggSprite;
+        GetComponent<SpriteRenderer>().color = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggColor;
     }
 }

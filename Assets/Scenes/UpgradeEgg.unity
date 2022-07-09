@@ -123,84 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &8389731
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8389733}
-  - component: {fileID: 8389732}
-  - component: {fileID: 8389734}
-  - component: {fileID: 8389735}
-  m_Layer: 0
-  m_Name: PlayerStats
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &8389732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13dfcf69201826e49b0fceb3ba6931f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EggThicknessTop: 100
-  EggThicknessBottomRight: 100
-  EggThicknessBottomLeft: 100
-  EggThicknessTopLeft: 100
-  EggThicknessTopRight: 100
-  EggTipSharpness: 1
-  EggSlipperyness: 1
-  EggSprite: {fileID: 0}
-  EggColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!4 &8389733
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389731}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.35, y: 2.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8389734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb4c863c13d93144a44febaf7044e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8389735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610491017e552164885297d0117b1c33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &11554593
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +204,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174530508
 GameObject:
@@ -502,7 +424,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 237920228}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1222486717}
+        m_TargetAssemblyTypeName: LoadLevels, Assembly-CSharp
+        m_MethodName: LoadBattleScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &237920228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,7 +558,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389735}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EggUpgrade, Assembly-CSharp
         m_MethodName: IncreaseEggTopThickness
         m_Mode: 1
@@ -867,7 +801,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389735}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EggUpgrade, Assembly-CSharp
         m_MethodName: IncreaseEggBottomRightThickness
         m_Mode: 1
@@ -1000,7 +934,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389735}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EggUpgrade, Assembly-CSharp
         m_MethodName: IncreaseEggSlipperyness
         m_Mode: 1
@@ -1370,7 +1304,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389735}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EggUpgrade, Assembly-CSharp
         m_MethodName: IncreaseEggTopLeftThickness
         m_Mode: 1
@@ -1589,6 +1523,7 @@ GameObject:
   - component: {fileID: 1222486716}
   - component: {fileID: 1222486715}
   - component: {fileID: 1222486714}
+  - component: {fileID: 1222486717}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1661,6 +1596,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222486717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222486713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18c4fbe8c00f844ab7940b964a5b058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1332756030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1849,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389735}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EggUpgrade, Assembly-CSharp
         m_MethodName: IncreaseEggTopRightThickness
         m_Mode: 1
@@ -2035,7 +1982,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389735}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EggUpgrade, Assembly-CSharp
         m_MethodName: IncreaseEggBottomLeftThickness
         m_Mode: 1
@@ -2168,7 +2115,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389735}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EggUpgrade, Assembly-CSharp
         m_MethodName: IncreaseEggTipSharpness
         m_Mode: 1
