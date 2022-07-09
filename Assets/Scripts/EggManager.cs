@@ -15,4 +15,5 @@ public class EggManager : MonoBehaviour
     public float EggTipSharpness = 1f;
     public float EggSlipperyness = 1f; //The bigger the slipperyness the less force for the spring to break
     public Sprite EggSprite;
+    public Color EggColor;
 }

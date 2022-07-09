@@ -160,6 +160,7 @@ MonoBehaviour:
   EggThicknessTopRight: 100
   EggTipSharpness: 1
   EggSlipperyness: 1
+  EggSprite: {fileID: 0}
 --- !u!4 &8389733
 Transform:
   m_ObjectHideFlags: 0
@@ -244,7 +245,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 103e52f4277d2c14e884679e28de9743, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb9b62a007848454fa3af1f243537820, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -365,6 +366,7 @@ MonoBehaviour:
   EggThicknessTopRight: 100
   EggTipSharpness: 2
   EggSlipperyness: 1
+  EggSprite: {fileID: 0}
 --- !u!114 &281428119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,6 +862,7 @@ MonoBehaviour:
   EggThicknessTopRight: 100
   EggTipSharpness: 3
   EggSlipperyness: 1
+  EggSprite: {fileID: 0}
 --- !u!114 &1060835138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,6 +1331,7 @@ MonoBehaviour:
   EggThicknessTopRight: 100
   EggTipSharpness: 3
   EggSlipperyness: 1
+  EggSprite: {fileID: 0}
 --- !u!114 &2072546628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,6 +1773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1224055858746680784, guid: 338a8131cac36a14083105cc26db7a05, type: 3}
+      propertyPath: m_Text
+      value: CHOOSE YOUR EGG!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 338a8131cac36a14083105cc26db7a05, type: 3}
 --- !u!4 &1726029469315789202
@@ -2144,6 +2152,7 @@ MonoBehaviour:
   EggThicknessTopRight: 100
   EggTipSharpness: 1
   EggSlipperyness: 1
+  EggSprite: {fileID: 0}
 --- !u!114 &1726029469315789233
 MonoBehaviour:
   m_ObjectHideFlags: 0

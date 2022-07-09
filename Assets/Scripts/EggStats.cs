@@ -36,6 +36,8 @@ public class EggStats : MonoBehaviour
             EggThicknessTopRight = eggManager.EggThicknessTopRight;
             EggTipSharpness = eggManager.EggTipSharpness;
             EggSlipperyness = eggManager.EggSlipperyness;
+            GetComponent<SpriteRenderer>().sprite = eggManager.EggSprite;
+            GetComponent<SpriteRenderer>().color = eggManager.EggColor;
         }
     }
     
