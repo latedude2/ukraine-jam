@@ -32,57 +32,59 @@ public class BattleState : MonoBehaviour
         //if any of player health is 0, then enemy wins
         if(player.currentHealthBottomLeft < 0)
         {
-            LoadLoseScene();
+            StartCoroutine(LoadLoseScene());
         }
         if(enemy.currentHealthBottomLeft < 0)
         {
-            LoadUpgradeScene();
+            StartCoroutine(LoadUpgradeScene());
         }
         if(player.currentHealthBottomRight < 0)
         {
-            LoadLoseScene();
+            StartCoroutine(LoadLoseScene());
         }
         if(enemy.currentHealthBottomRight < 0)
         {
-            LoadUpgradeScene();
+            StartCoroutine(LoadUpgradeScene());
         }
         if(player.currentHealthTopLeft < 0)
         {
-            LoadLoseScene();
+            StartCoroutine(LoadLoseScene());
         }
         if(enemy.currentHealthTopLeft < 0)
         {
-            LoadUpgradeScene();
+            StartCoroutine(LoadUpgradeScene());
         }
         if(player.currentHealthTopRight < 0)
         {
-            LoadLoseScene();
+            StartCoroutine(LoadLoseScene());
         }
         if(enemy.currentHealthTopRight < 0)
         {
-            LoadUpgradeScene();
+            StartCoroutine(LoadUpgradeScene());
         }
         if(player.currentHealthTop < 0)
         {
-            LoadLoseScene();
+            StartCoroutine(LoadLoseScene());
         }
         if(enemy.currentHealthTop < 0)
         {
-            LoadUpgradeScene();
+            StartCoroutine(LoadUpgradeScene());
         }
     }
 
-    void LoadLoseScene()
+    IEnumerator LoadLoseScene()
     {
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Lose");
     }
 
-    void LoadUpgradeScene()
+    IEnumerator LoadUpgradeScene()
     {
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("UpgradeEgg");
     }
 }

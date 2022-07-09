@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips: []
+  destructionParticle: {fileID: 5866780773250341746, guid: 7a95a9594584a384d85beef430ab54a0, type: 3}
   currentHealthTop: 100
   currentHealthBottomRight: 100
   currentHealthBottomLeft: 100
@@ -302,6 +303,7 @@ MonoBehaviour:
   EggThicknessTopRight: 100
   EggTipSharpness: 1
   EggGrip: 1
+  tex: {fileID: 0}
 --- !u!114 &3771690946175677490
 MonoBehaviour:
   m_ObjectHideFlags: 0
