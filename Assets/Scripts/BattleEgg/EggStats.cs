@@ -93,7 +93,7 @@ public class EggStats : MonoBehaviour
     }
 
     public void TakeImpactDamage(float incomingDamage, int side) {
-        Debug.Log("Incoming damage: " + incomingDamage + "; Side: " + side);
+        //Debug.Log("Incoming damage: " + incomingDamage + "; Side: " + side);
         if (side == 0) {    //tip
             currentHealthTop -= incomingDamage / EggThicknessTop;
         } else if (side == 1){  //right top

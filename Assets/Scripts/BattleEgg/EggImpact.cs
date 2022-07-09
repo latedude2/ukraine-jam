@@ -13,6 +13,7 @@ public class EggImpact : MonoBehaviour
     GameObject enemyEgg;
 
     EggStats eggStats;
+    private float fixedDeltaTime;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class EggImpact : MonoBehaviour
     void Update()
     {
         //GetAngleOfImpact(m_MyObject.transform.position);
+        Slowmo();
     }
 
     float GetAngleOfImpact(Vector3 hitPosition, GameObject target)
@@ -52,13 +54,25 @@ public class EggImpact : MonoBehaviour
 
         return m_SignedAngle;
     }
-
+    void Awake()
+    {
+        // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
+        this.fixedDeltaTime = Time.fixedDeltaTime;
+    }
     void Slowmo(){
         if(enemyEgg != null){
             float dist = Vector3.Distance(enemyEgg.transform.position, transform.position);
-            if (dist < 10){
-
+            Debug.Log(dist);
+            if (dist < 1){
+                Time.timeScale = .15f;
+            
+            } else if (dist < 2){
+                Time.timeScale = .3f;
+            
+            } else {
+                Time.timeScale = 1.0f;
             }
+            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         }
     }
 
@@ -66,6 +80,7 @@ public class EggImpact : MonoBehaviour
     {
         if (col.gameObject.tag == "Egg")
         {
+            enemyEgg = col.gameObject;
             float force = 0;
             for(int i = 0; i < col.contactCount; i++){
                 force += Mathf.Abs(col.GetContact(i).normalImpulse);
@@ -101,7 +116,7 @@ public class EggImpact : MonoBehaviour
 
                 //!!!DOVI USE AVERAGEPOS FOR IMPACT POSITION HERE!!!
 
-                Debug.Log("Force: " + force);
+                //Debug.Log("Force: " + force);
 
                 if (hitAngle > hitZoneAngles[0] && hitAngle < hitZoneAngles[4]){
                     col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(0, force), targetHitZone);
