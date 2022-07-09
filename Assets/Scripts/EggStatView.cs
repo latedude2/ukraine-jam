@@ -12,8 +12,6 @@ public class EggStatView : MonoBehaviour
     Text grip;
     Text thicknessTop;
     Text thicknessBottomRight;
-    Text thicknessBottomLeft;
-    Text thicknessTopLeft;
     Text thicknessTopRight;
 
 
@@ -24,8 +22,6 @@ public class EggStatView : MonoBehaviour
         grip = GameObject.Find("EggSlipperyness").GetComponent<Text>();
         thicknessTop = GameObject.Find("TopThickness").GetComponent<Text>();
         thicknessBottomRight = GameObject.Find("BottomRightThickness").GetComponent<Text>();
-        thicknessBottomLeft = GameObject.Find("BottomLeftThickness").GetComponent<Text>();
-        thicknessTopLeft = GameObject.Find("TopLeftThickness").GetComponent<Text>();
         thicknessTopRight = GameObject.Find("TopRightThickness").GetComponent<Text>();
         //if loaded scene is upgrade
     }
@@ -52,8 +48,6 @@ public class EggStatView : MonoBehaviour
             grip.text = eggManager.EggGrip.ToString();
             thicknessTop.text = eggManager.EggThicknessTop.ToString();
             thicknessBottomRight.text = eggManager.EggThicknessBottomRight.ToString();
-            thicknessBottomLeft.text = eggManager.EggThicknessBottomLeft.ToString();
-            thicknessTopLeft.text = eggManager.EggThicknessTopLeft.ToString();
             thicknessTopRight.text = eggManager.EggThicknessTopRight.ToString();
         }
     }
@@ -78,8 +72,6 @@ public class EggStatView : MonoBehaviour
                 EggManager chosenEggManager = eggs[0].transform.gameObject.GetComponent<EggManager>();
                 thicknessTop.text = chosenEggManager.EggThicknessTop.ToString();
                 thicknessBottomRight.text = chosenEggManager.EggThicknessBottomRight.ToString();
-                thicknessBottomLeft.text = chosenEggManager.EggThicknessBottomLeft.ToString();
-                thicknessTopLeft.text = chosenEggManager.EggThicknessTopLeft.ToString();
                 thicknessTopRight.text = chosenEggManager.EggThicknessTopRight.ToString();
                 grip.text = chosenEggManager.EggGrip.ToString();
                 tipSharpness.text = chosenEggManager.EggTipSharpness.ToString();
