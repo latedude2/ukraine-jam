@@ -23,6 +23,17 @@ public class LoadLevels : MonoBehaviour
         SceneManager.LoadScene("ChooseEgg");
     }
 
+    public void LoadChooseSceneAsStoryMode()
+    {
+        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToStory();
+        SceneManager.LoadScene("ChooseEgg");
+    }
+
+    public void LoadNextBattleStory()
+    {
+        SceneManager.LoadScene("StoryBattle " + (GameObject.Find("PlayerStats").GetComponent<Progression>().Level + 1));
+    }
+
     public void LoadCreditsScene()
     {
         SceneManager.LoadScene("Credits");

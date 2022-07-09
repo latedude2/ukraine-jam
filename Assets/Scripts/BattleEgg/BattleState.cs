@@ -8,6 +8,7 @@ public class BattleState : MonoBehaviour
     // Start is called before the first frame update
     EggStats player;
     EggStats enemy;
+    Progression progression;
     private float fixedDeltaTime;
     void Awake()
     {
@@ -15,6 +16,7 @@ public class BattleState : MonoBehaviour
     }
     void Start()
     {
+        progression = GameObject.Find("PlayerStats").GetComponent<Progression>();
         player = GameObject.Find("Egg - Player").GetComponent<EggStats>();
         enemy = GameObject.Find("Egg - Enemy").GetComponent<EggStats>();
     }
@@ -26,7 +28,7 @@ public class BattleState : MonoBehaviour
         //-----------------------------
         if(Input.GetKeyDown("p") && Input.GetKey("left shift"))
         {
-            SceneManager.LoadScene("UpgradeEgg");
+            LoadNextScene();
         }
         //-----------------------------
         //if any of player health is 0, then enemy wins
@@ -36,7 +38,7 @@ public class BattleState : MonoBehaviour
         }
         if(enemy.currentHealthBottomLeft < 0)
         {
-            LoadUpgradeScene();
+            LoadNextScene();
         }
         if(player.currentHealthBottomRight < 0)
         {
@@ -44,7 +46,7 @@ public class BattleState : MonoBehaviour
         }
         if(enemy.currentHealthBottomRight < 0)
         {
-            LoadUpgradeScene();
+            LoadNextScene();
         }
         if(player.currentHealthTopLeft < 0)
         {
@@ -52,7 +54,7 @@ public class BattleState : MonoBehaviour
         }
         if(enemy.currentHealthTopLeft < 0)
         {
-            LoadUpgradeScene();
+            LoadNextScene();
         }
         if(player.currentHealthTopRight < 0)
         {
@@ -60,7 +62,7 @@ public class BattleState : MonoBehaviour
         }
         if(enemy.currentHealthTopRight < 0)
         {
-            LoadUpgradeScene();
+            LoadNextScene();
         }
         if(player.currentHealthTop < 0)
         {
@@ -68,7 +70,7 @@ public class BattleState : MonoBehaviour
         }
         if(enemy.currentHealthTop < 0)
         {
-            LoadUpgradeScene();
+            LoadNextScene();
         }
     }
 
@@ -79,10 +81,18 @@ public class BattleState : MonoBehaviour
         SceneManager.LoadScene("Lose");
     }
 
-    void LoadUpgradeScene()
+    void LoadNextScene()
     {
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-        SceneManager.LoadScene("UpgradeEgg");
+        progression.IncreaseLevel();
+        if (!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
+        {
+            SceneManager.LoadScene("UpgradeEgg");
+        }
+        else 
+        {
+            SceneManager.LoadScene("Victory " + progression.Level);
+        }
     }
 }
