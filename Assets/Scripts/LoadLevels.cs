@@ -20,12 +20,13 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadChooseScene()
     {
+        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToStory(false);
         SceneManager.LoadScene("ChooseEgg");
     }
 
     public void LoadChooseSceneAsStoryMode()
     {
-        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToStory();
+        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToStory(true);
         SceneManager.LoadScene("ChooseEgg");
     }
 
@@ -41,6 +42,7 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadMainMenuScene()
     {
+        GameObject.Find("PlayerStats").GetComponent<Progression>().Level = 0;
         SceneManager.LoadScene("MainMenu");
     }
 }

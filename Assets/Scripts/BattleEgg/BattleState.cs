@@ -28,7 +28,7 @@ public class BattleState : MonoBehaviour
         //-----------------------------
         if(Input.GetKeyDown("p") && Input.GetKey("left shift"))
         {
-            LoadNextScene();
+            StartCoroutine(LoadNextScene());
         }
         //-----------------------------
         //if any of player health is 0, then enemy wins

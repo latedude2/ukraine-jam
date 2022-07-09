@@ -18,8 +18,8 @@ public class GameModeManager : MonoBehaviour
         }
     }
 
-    public void SetModeToStory()
+    public void SetModeToStory(bool story)
     {
-        isStoryMode = true;
+        isStoryMode = story;
     }
 }
