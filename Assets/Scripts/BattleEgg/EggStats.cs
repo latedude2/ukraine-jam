@@ -118,7 +118,7 @@ public class EggStats : MonoBehaviour
         if (currentHealthTop <= 0 || currentHealthTopLeft <= 0 || currentHealthBottomRight <= 0 || currentHealthBottomLeft <= 0 || currentHealthTopRight <= 0){
             GameObject burstParticle = Instantiate(destructionParticle, gameObject.transform.position, Quaternion.identity) as GameObject;
             ParticleSystem.MainModule settings = burstParticle.GetComponent<ParticleSystem>().main;
-            settings.startColor = new ParticleSystem.MinMaxGradient(tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)]);
+            settings.startColor = new ParticleSystem.MinMaxGradient(tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)] * GetComponent<SpriteRenderer>().color);
             Destroy(gameObject);
         }
     }

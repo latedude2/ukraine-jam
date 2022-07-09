@@ -128,7 +128,7 @@ public class EggImpact : MonoBehaviour
                 //instantiate impact particle at averagePos
                 impactParticle = Instantiate(impactShellParticle, averagePos, Quaternion.identity) as GameObject;
                 ParticleSystem.MainModule settings = impactParticle.GetComponent<ParticleSystem>().main;
-                settings.startColor = new ParticleSystem.MinMaxGradient(eggStats.tex.GetPixels32()[Random.Range(0,eggStats.tex.GetPixels32().Length)]);
+                settings.startColor = new ParticleSystem.MinMaxGradient(eggStats.tex.GetPixels32()[Random.Range(0,eggStats.tex.GetPixels32().Length)]*GetComponent<SpriteRenderer>().color);
                 Destroy(impactParticle, 3f);
 
                 //Debug.Log("Force: " + force);
