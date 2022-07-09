@@ -9,7 +9,7 @@ public class UpgradeButtonSetup : MonoBehaviour
     public Button TopLeftShellButton, BottomRightShellButton, BottomLeftShellButton;
     public Button EggGripButton;
 
-    int upgradesLeft = 5;
+    int upgradesLeft = 1;
 
     EggUpgrade eggUpgrade;
 
