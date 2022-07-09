@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c96a99d6a99baed4596ffbcfd7e6a44c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Yumaro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a392de0e1425f75418f338f2f2668db1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
