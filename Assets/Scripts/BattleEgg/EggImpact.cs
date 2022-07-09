@@ -124,10 +124,12 @@ public class EggImpact : MonoBehaviour
                 //!!!DOVI USE AVERAGEPOS FOR IMPACT POSITION HERE!!!
                 //instantiate impact particle at averagePos
                 GameObject impactParticle = Instantiate(impactCollisionParticle, averagePos, Quaternion.identity) as GameObject;
-                Destroy(impactParticle, 1f);
+                Destroy(impactParticle, 3f);
                 //instantiate impact particle at averagePos
                 impactParticle = Instantiate(impactShellParticle, averagePos, Quaternion.identity) as GameObject;
-                Destroy(impactParticle, 1f);
+                ParticleSystem.MainModule settings = impactParticle.GetComponent<ParticleSystem>().main;
+                settings.startColor = new ParticleSystem.MinMaxGradient(eggStats.tex.GetPixels32()[Random.Range(0,eggStats.tex.GetPixels32().Length)]);
+                Destroy(impactParticle, 3f);
 
                 //Debug.Log("Force: " + force);
 
