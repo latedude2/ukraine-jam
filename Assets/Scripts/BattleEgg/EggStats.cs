@@ -7,6 +7,9 @@ public class EggStats : MonoBehaviour
     //-----------------------''
     bool isPlayer = false;
 
+    AudioSource audioSource;
+    public AudioClip[] audioClips;
+
     //Values that change in battle
     public float currentHealthTop = 100f;
     public float currentHealthBottomRight = 100f;
@@ -28,6 +31,7 @@ public class EggStats : MonoBehaviour
     {
         if (GetComponent<EggControl>() != null) {
             isPlayer = true;
+            audioSource = Camera.main.GetComponent<AudioSource>();
         }
         //if egg is player, take stats from manager
         if(isPlayer) 
@@ -54,7 +58,7 @@ public class EggStats : MonoBehaviour
     {
         Progression progression = GameObject.Find("PlayerStats").GetComponent<Progression>();
         int level = progression.Level;
-        float levelMultiplier = level * 0.1f;   //10% per level increase to all stats
+        float levelMultiplier = (level-1) * 0.05f;   //5% per level increase to all stats
         EggThicknessTop = EggThicknessTop + (EggThicknessTop * levelMultiplier);
         EggThicknessBottomLeft = EggThicknessBottomLeft + (EggThicknessBottomLeft * levelMultiplier);
         EggThicknessBottomRight = EggThicknessBottomRight + (EggThicknessBottomRight * levelMultiplier);
@@ -64,6 +68,15 @@ public class EggStats : MonoBehaviour
     }
 
     public float CalcImpactValue(int side, float force) {
+        if (isPlayer){
+            if (force < 40){
+                audioSource.volume = force/40;
+            } else {
+                audioSource.volume = 1;
+            }
+            audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+            audioSource.Play();
+        } 
         if (side == 0) {    //tip
             return force * 50f * EggTipSharpness;
         } else if (side == 1){  //right top
@@ -75,6 +88,7 @@ public class EggStats : MonoBehaviour
         } else if (side == 4){  //left top
             return force * 50f;
         }
+       
         return 0;
     }
 
@@ -94,6 +108,7 @@ public class EggStats : MonoBehaviour
 
         if (isPlayer){
             GetComponent<EggPlayerUI>().UpdateUIHealth();
+            GameObject.Find("Main Camera").GetComponent<CameraShake>().shakeDuration = 0.2f;
         }
     }
 }
