@@ -80,6 +80,9 @@ public class EggImpact : MonoBehaviour
                 slowmoSource.pitch = .8f;
             }
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        } else {
+                slowmoSource.volume = 0;
+                slowmoSource.pitch = .8f;
         }
     }
 

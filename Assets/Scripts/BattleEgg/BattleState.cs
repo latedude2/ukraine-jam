@@ -74,7 +74,7 @@ public class BattleState : MonoBehaviour
 
     IEnumerator LoadLoseScene()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         SceneManager.LoadScene("Lose");
@@ -82,7 +82,7 @@ public class BattleState : MonoBehaviour
 
     IEnumerator LoadUpgradeScene()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         SceneManager.LoadScene("UpgradeEgg");
