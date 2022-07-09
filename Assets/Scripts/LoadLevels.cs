@@ -17,4 +17,9 @@ public class LoadLevels : MonoBehaviour
     {
         SceneManager.LoadScene("Battle");
     }
+
+    public void LoadChooseScene()
+    {
+        SceneManager.LoadScene("ChooseEgg");
+    }
 }

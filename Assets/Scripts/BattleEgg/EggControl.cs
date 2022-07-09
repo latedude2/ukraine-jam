@@ -15,6 +15,7 @@ public class EggControl : MonoBehaviour
     SpringJoint2D spring;
     Rigidbody2D mouseFollower;
     void Start() {
+        eggSlipperyness = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggSlipperyness;
         mouseFollower = GameObject.Find("MouseFollower").GetComponent<Rigidbody2D>();
     }
 
