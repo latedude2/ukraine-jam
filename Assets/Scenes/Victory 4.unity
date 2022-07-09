@@ -426,7 +426,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
-      value: Is it time to face Nicolaus Cop-egg-nicus? Raise your pierogis!
+      value: Wake up, samurais! Is it time to face Nicolaus Cop-egg-nicus? Raise
+        your pierogis!
       objectReference: {fileID: 0}
     - target: {fileID: 7081929881544581858, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_FontData.m_Font
