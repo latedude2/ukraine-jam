@@ -47,15 +47,15 @@ public class EggStats : MonoBehaviour
 
     public float CalcImpactValue(int side, float force) {
         if (side == 0) {    //tip
-            return force * 500f * EggTipSharpness;
+            return force * 50f * EggTipSharpness;
         } else if (side == 1){  //right top
-            return force * 500f;
+            return force * 50f;
         } else if (side == 2){  //right bottom
-            return force * 500f;
+            return force * 50f;
         } else if (side == 3){  //left bottom
-            return force * 500f;
+            return force * 50f;
         } else if (side == 4){  //left top
-            return force * 500f;
+            return force * 50f;
         }
         return 0;
     }
