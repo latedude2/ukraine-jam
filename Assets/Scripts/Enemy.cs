@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] List<Transform> waypoints;
     int followedWaypoint = 0;
     Rigidbody2D rb;
+    [SerializeField] List<Sprite> enemySprites;
 
     public float speed = 200f;
 
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     {
         playerEgg = GameObject.Find("Egg - Player");
         rb = GetComponent<Rigidbody2D>();
+        RandomizeSkin();
     }
 
     void FixedUpdate()
@@ -35,6 +37,12 @@ public class Enemy : MonoBehaviour
         }
         else Debug.LogError("No waypoints setup for enemy");
         
+    }
+
+    void RandomizeSkin()
+    {
+        GetComponent<SpriteRenderer>().sprite = enemySprites[Random.Range(0, enemySprites.Count)];
+        GetComponent<SpriteRenderer>().color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
     }
 
 }

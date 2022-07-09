@@ -13,6 +13,9 @@ public class EggImpact : MonoBehaviour
     GameObject enemyEgg;
     AudioSource slowmoSource;
 
+    [SerializeField] GameObject impactShellParticle;
+    [SerializeField] GameObject impactCollisionParticle;
+
     EggStats eggStats;
     private float fixedDeltaTime;
 
@@ -119,6 +122,12 @@ public class EggImpact : MonoBehaviour
                 }
 
                 //!!!DOVI USE AVERAGEPOS FOR IMPACT POSITION HERE!!!
+                //instantiate impact particle at averagePos
+                GameObject impactParticle = Instantiate(impactCollisionParticle, averagePos, Quaternion.identity) as GameObject;
+                Destroy(impactParticle, 1f);
+                //instantiate impact particle at averagePos
+                impactParticle = Instantiate(impactShellParticle, averagePos, Quaternion.identity) as GameObject;
+                Destroy(impactParticle, 1f);
 
                 //Debug.Log("Force: " + force);
 
