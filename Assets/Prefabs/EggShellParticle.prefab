@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5866780773250341756}
   - component: {fileID: 5866780773250341757}
   m_Layer: 0
-  m_Name: Egg Shell Particle
+  m_Name: EggShellParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
