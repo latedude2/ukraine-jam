@@ -2,16 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EggImpact : MonoBehaviour
 {
+    //You must assign to these two GameObjects in the Inspector
+    public GameObject m_MyObject;
+
     void Start()
     {
-        
+
     }
 
     void Update()
     {
+        //GetAngleOfImpact(m_MyObject.transform.position);
+    }
+
+    float GetAngleOfImpact(Vector3 hitPosition)
+    {
+        //get angle between this game object and m_MyObject and take into account this game object's rotation
+        Vector2 m_MySecondVector = hitPosition - transform.position;
+        float m_SignedAngle = Vector2.Angle(m_MySecondVector, transform.right);
+        Debug.DrawLine(Vector2.zero, m_MySecondVector, Color.blue);
+        //turn mysecondvector to local space
+        m_MySecondVector = transform.InverseTransformDirection(m_MySecondVector);
+        if (m_MySecondVector.y < 0)
+        {
+            m_SignedAngle = -m_SignedAngle;
+        }
         
+        Debug.Log("Signed Angle: " + m_SignedAngle);
+        
+        if (m_SignedAngle > 160 && m_SignedAngle < 200){
+            Debug.Log("Tip Hit!!!");
+        }
+        return m_SignedAngle;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -23,29 +48,23 @@ public class EggImpact : MonoBehaviour
                 force += Mathf.Abs(col.GetContact(i).normalImpulse);
             }
             force /= col.contactCount;
-            Debug.Log(force);
+            //Debug.Log("Impact force: " + force);
 
             if(force>.1f){
 
-                // Print how many points are colliding with this transform
-                Debug.Log("Points colliding: " + col.GetContact(0));
-
-                // Print the normal of the first point in the collision.
-                Debug.Log("Normal of the first point: " + col.GetContact(0).normal);
-
-                // Draw a different colored ray for every normal in the collision
-                Vector2 point = new Vector2(0,0);
-                Vector2 normal = new Vector2(0,0);
-                
-                foreach (var item in col.contacts)
-                {
-                //Debug.DrawRay(item.point, item.normal * 100, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 10f);
-                point = item.point;
-                normal += item.normal;
-                
+                Vector2 sum = new Vector2(0,0);
+                int amount = 0;
+                for(int i = 0; i < col.contactCount; i++){
+                    sum += col.GetContact(i).point;
+                    amount++;
                 }
+                Vector2 averagePos = sum / amount;
 
-                Debug.DrawRay(point, normal * 100, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 10f);
+                float hitAngle = GetAngleOfImpact(averagePos);
+
+                if (hitAngle > 160+gameObject.transform.rotation.eulerAngles.z && hitAngle < 200+gameObject.transform.rotation.eulerAngles.z){
+                    //Debug.Log("Tip Hit!!!");
+                }
             }
         }
     }
