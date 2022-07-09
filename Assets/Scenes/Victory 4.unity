@@ -342,7 +342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 56.6
+      value: 50.9
       objectReference: {fileID: 0}
     - target: {fileID: 1858762465632601926, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 53.1
+      value: 49.1
       objectReference: {fileID: 0}
     - target: {fileID: 3730201150015634866, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -471,8 +471,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_Text
-      value: The Czech Republic egg will need to drown its sorrows with beer. Doesn't
-        sound that bad if you ask me.
+      value: The Cz-egg will need to drown its sorrows with beer. Doesn't sound that
+        bad if you ask me.
       objectReference: {fileID: 0}
     - target: {fileID: 7081929882399961647, guid: 83f337c310aa1f14c8f4a53ff884f951, type: 3}
       propertyPath: m_FontData.m_Font
