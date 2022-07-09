@@ -166,11 +166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.86
+      value: -3.82
       objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.26
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -290,11 +290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.51
+      value: 6.74
       objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.68
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -706,6 +706,23 @@ Transform:
   m_Father: {fileID: 1925639206}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1089304331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5853825767753698771, guid: 8ae55884e02382145add62a745158efa, type: 3}
+  m_PrefabInstance: {fileID: 5853825767130958392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1089304333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089304331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a40831c89e3334ab87239566226534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1161915890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5877188072352478502, guid: 8ae55884e02382145add62a745158efa, type: 3}
