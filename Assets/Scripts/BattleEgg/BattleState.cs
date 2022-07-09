@@ -9,9 +9,22 @@ public class BattleState : MonoBehaviour
     EggStats player;
     EggStats enemy;
 
+    void Start()
+    {
+        player = GameObject.Find("Egg - Player").GetComponent<EggStats>();
+        enemy = GameObject.Find("Egg - Enemy").GetComponent<EggStats>();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        //Cheat, remove for launch
+        //-----------------------------
+        if(Input.GetKeyDown("p") && Input.GetKey("left shift"))
+        {
+            SceneManager.LoadScene("UpgradeEgg");
+        }
+        //-----------------------------
         //if any of player health is 0, then enemy wins
         if(player.currentHealthBottomLeft < 0)
         {
