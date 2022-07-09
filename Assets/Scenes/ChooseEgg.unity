@@ -387,12 +387,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dfcf69201826e49b0fceb3ba6931f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EggThicknessTop: 100
-  EggThicknessBottomRight: 100
-  EggThicknessBottomLeft: 100
-  EggThicknessTopLeft: 100
-  EggThicknessTopRight: 100
-  EggTipSharpness: 2
+  EggThicknessTop: 110
+  EggThicknessBottomRight: 85
+  EggThicknessBottomLeft: 85
+  EggThicknessTopLeft: 90
+  EggThicknessTopRight: 90
+  EggTipSharpness: 1.1
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
   EggColor: {r: 0, g: 0, b: 0, a: 0}
@@ -884,12 +884,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dfcf69201826e49b0fceb3ba6931f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EggThicknessTop: 100
-  EggThicknessBottomRight: 100
-  EggThicknessBottomLeft: 100
-  EggThicknessTopLeft: 100
-  EggThicknessTopRight: 100
-  EggTipSharpness: 3
+  EggThicknessTop: 90
+  EggThicknessBottomRight: 90
+  EggThicknessBottomLeft: 85
+  EggThicknessTopLeft: 85
+  EggThicknessTopRight: 95
+  EggTipSharpness: 1.3
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
   EggColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1355,11 +1355,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EggThicknessTop: 100
-  EggThicknessBottomRight: 100
-  EggThicknessBottomLeft: 100
-  EggThicknessTopLeft: 100
-  EggThicknessTopRight: 100
-  EggTipSharpness: 3
+  EggThicknessBottomRight: 140
+  EggThicknessBottomLeft: 140
+  EggThicknessTopLeft: 120
+  EggThicknessTopRight: 120
+  EggTipSharpness: 0.8
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
   EggColor: {r: 0, g: 0, b: 0, a: 0}
