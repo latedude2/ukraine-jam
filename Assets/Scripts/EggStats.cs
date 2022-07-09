@@ -5,6 +5,7 @@ using UnityEngine;
 public class EggStats : MonoBehaviour
 {
     //-----------------------''
+    bool isPlayer = false;
 
     //Values that change in battle
     public float currentHealthTop = 100f;
@@ -25,6 +26,9 @@ public class EggStats : MonoBehaviour
 
     void Start()
     {
+        if (GetComponent<EggControl>() != null) {
+            isPlayer = true;
+        }
         //if egg is player, take stats from manager
         if(GetComponent<EggControl>() != null) 
         {
@@ -60,14 +64,29 @@ public class EggStats : MonoBehaviour
         Debug.Log("Incoming damage: " + incomingDamage + "; Side: " + side);
         if (side == 0) {    //tip
             currentHealthTop -= incomingDamage;
+            if (isPlayer){
+                GetComponent<EggPlayerUI>().UpdateUIHealth();
+            }
         } else if (side == 1){  //right top
             currentHealthTopRight -= incomingDamage;
+            if (isPlayer){
+                GetComponent<EggPlayerUI>().UpdateUIHealth();
+            }
         } else if (side == 2){  //right bottom
             currentHealthBottomRight -= incomingDamage;
+            if (isPlayer){
+                GetComponent<EggPlayerUI>().UpdateUIHealth();
+            }
         } else if (side == 3){  //left bottom
             currentHealthBottomLeft -= incomingDamage;
+            if (isPlayer){
+                GetComponent<EggPlayerUI>().UpdateUIHealth();
+            }
         } else if (side == 4){  //left top
             currentHealthTopLeft -= incomingDamage;
+            if (isPlayer){
+                GetComponent<EggPlayerUI>().UpdateUIHealth();
+            }
         }
     }
 }
