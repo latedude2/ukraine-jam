@@ -23,4 +23,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 8b5926fdd12b70e4fbd9ebbf19c28bc2
+  - enabled: 1
+    path: Assets/Scenes/StoryBattle 1.unity
+    guid: 68ce0b46856fbbb46b8aa9b1e84484e9
+  - enabled: 1
+    path: Assets/Scenes/StoryBattle 2.unity
+    guid: b4de95a21c0b861408829def51256676
+  - enabled: 1
+    path: Assets/Scenes/StoryBattle 3.unity
+    guid: f332ca9c506c466458a858b6ac17411f
+  - enabled: 1
+    path: Assets/Scenes/StoryBattle 4.unity
+    guid: 431b1ed1ca36f144a89b5e6cc6cb2af5
+  - enabled: 1
+    path: Assets/Scenes/StoryBattle 5.unity
+    guid: cde882c171bc5c2478c52503737d360b
+  - enabled: 1
+    path: Assets/Scenes/Victory 1.unity
+    guid: 309badf5526853843a5588a6ce0cd2d8
+  - enabled: 1
+    path: Assets/Scenes/Victory 2.unity
+    guid: 8e964b7dbc4c70d48a533a3d8719e754
+  - enabled: 1
+    path: Assets/Scenes/Victory 3.unity
+    guid: 174c79de9863995419bcf1302a08c12b
+  - enabled: 1
+    path: Assets/Scenes/Victory 4.unity
+    guid: a6759a838b74a714a88bc596dd78fb34
+  - enabled: 1
+    path: Assets/Scenes/Victory 5.unity
+    guid: f6ad435ba5c42d44d9b97567e86563ca
   m_configObjects: {}
