@@ -2275,6 +2275,30 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1224055857065241833, guid: 338a8131cac36a14083105cc26db7a05, type: 3}
   m_PrefabInstance: {fileID: 1224055857380512316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1224055857380512318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1224055857065241837, guid: 338a8131cac36a14083105cc26db7a05, type: 3}
+  m_PrefabInstance: {fileID: 1224055857380512316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1224055857380512319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224055857380512318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c076ab4d6455c4b449ac7e776cf3e9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TipSharpnessButton: {fileID: 2090582830}
+  ShellTopButton: {fileID: 330945209}
+  TopRightShellButton: {fileID: 1922310030}
+  TopLeftShellButton: {fileID: 785134951}
+  BottomRightShellButton: {fileID: 502124183}
+  BottomLeftShellButton: {fileID: 2002586591}
+  EggSlipButton: {fileID: 509495427}
 --- !u!4 &1726029469315789202
 Transform:
   m_ObjectHideFlags: 0

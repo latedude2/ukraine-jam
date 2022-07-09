@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 8389733}
   - component: {fileID: 8389732}
   - component: {fileID: 8389734}
+  - component: {fileID: 8389735}
   m_Layer: 0
   m_Name: PlayerStats
   m_TagString: Untagged
@@ -161,6 +162,7 @@ MonoBehaviour:
   EggTipSharpness: 1
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
+  EggColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8389733
 Transform:
   m_ObjectHideFlags: 0
@@ -185,6 +187,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bb4c863c13d93144a44febaf7044e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8389735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610491017e552164885297d0117b1c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &11554593
@@ -367,6 +381,7 @@ MonoBehaviour:
   EggTipSharpness: 2
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
+  EggColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &281428119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,6 +878,7 @@ MonoBehaviour:
   EggTipSharpness: 3
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
+  EggColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1060835138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,6 +1348,7 @@ MonoBehaviour:
   EggTipSharpness: 3
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
+  EggColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2072546628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,6 +2170,7 @@ MonoBehaviour:
   EggTipSharpness: 1
   EggSlipperyness: 1
   EggSprite: {fileID: 0}
+  EggColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1726029469315789233
 MonoBehaviour:
   m_ObjectHideFlags: 0
