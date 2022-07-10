@@ -109,11 +109,13 @@ public class EggStats : MonoBehaviour
         } else if (side == 4){  //left top
             currentHealthTopLeft -= incomingDamage / EggThicknessTopLeft; 
         }
-
+        
+        GetComponent<EggPlayerUI>().UpdateUIHealth();
         if (isPlayer){
-            GetComponent<EggPlayerUI>().UpdateUIHealth();
+            
             GameObject.Find("Main Camera").GetComponent<CameraShake>().shakeDuration = 0.2f;
         }
+
 
         if (currentHealthTop <= 0 || currentHealthTopLeft <= 0 || currentHealthBottomRight <= 0 || currentHealthBottomLeft <= 0 || currentHealthTopRight <= 0){
             GameObject burstParticle = Instantiate(destructionParticle, gameObject.transform.position, Quaternion.identity) as GameObject;

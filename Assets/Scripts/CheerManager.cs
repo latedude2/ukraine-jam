@@ -26,14 +26,12 @@ public class CheerManager : MonoBehaviour
     {
         if(VolumeIncreasing)
         {
-            Debug.Log("Increasing Volume");
             if(GetComponent<AudioSource>().volume < peakVolume)
             {
                 GetComponent<AudioSource>().volume += volumeIncreaseSpeed * Time.deltaTime;
             }
             if(GetComponent<AudioSource>().volume >= peakVolume)
             {
-                Debug.Log("Volume Reached Peak");
                 VolumeIncreasing = false;
             }
         }
@@ -45,7 +43,6 @@ public class CheerManager : MonoBehaviour
 
     public void PlayCheer()
     {
-        Debug.Log("Cheer!");
         if(!VolumeIncreasing) VolumeIncreasing = true;
     }
 }

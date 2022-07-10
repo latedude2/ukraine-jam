@@ -11,8 +11,6 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] List<Sprite> enemySprites;
 
-    ShowEnemyEgg showEnemyEgg;
-
     EggStats eggStats;
 
     public float speed = 200f;
