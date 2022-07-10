@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 237920229}
   - component: {fileID: 237920228}
   - component: {fileID: 237920227}
+  - component: {fileID: 237920230}
   m_Layer: 5
   m_Name: NextBattle
   m_TagString: Untagged
@@ -400,6 +401,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237920225}
   m_CullTransparentMesh: 1
+--- !u!114 &237920230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237920225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb254f1e8fc1044689a71e521c77d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 237920227}
 --- !u!1 &330945207
 GameObject:
   m_ObjectHideFlags: 0

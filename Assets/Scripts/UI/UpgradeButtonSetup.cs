@@ -12,6 +12,8 @@ public class UpgradeButtonSetup : MonoBehaviour
     int upgradesLeft = 1;
 
     EggUpgrade eggUpgrade;
+    
+    ButtonSoundManager buttonSoundManager;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class UpgradeButtonSetup : MonoBehaviour
         TopRightShellButton.onClick.AddListener(UpgradeTopRightShell);
         BottomRightShellButton.onClick.AddListener(UpgradeBottomRightShell);
         EggGripButton.onClick.AddListener(UpgradeEggGrip);
+        
+        buttonSoundManager = GameObject.FindWithTag("ButtonSoundManager").GetComponent<ButtonSoundManager>();
     }
 
     void UpgradeTipShrapness()
@@ -63,6 +67,7 @@ public class UpgradeButtonSetup : MonoBehaviour
             Destroy(BottomRightShellButton);
             Destroy(BottomLeftShellButton);
             Destroy(EggGripButton);
+            buttonSoundManager.PlayOnButtonClick();
         }
     }
 
