@@ -8,14 +8,14 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         //implement singleton
-        if (FindObjectsOfType(GetType()).Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        // if (FindObjectsOfType(GetType()).Length > 1)
+        // {
+        //     Destroy(gameObject);
+        // }
+        // else
+        // {
+        //     DontDestroyOnLoad(gameObject);
+        // }
     }
 
     // Update is called once per frame
