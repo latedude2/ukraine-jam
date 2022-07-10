@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Enemy : MonoBehaviour
     int followedWaypoint = 0;
     Rigidbody2D rb;
     [SerializeField] List<Sprite> enemySprites;
+
+    ShowEnemyEgg showEnemyEgg;
 
     EggStats eggStats;
 
@@ -51,6 +54,9 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = enemySprites[Random.Range(0, enemySprites.Count)];
         GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.7f, 1f), Random.Range(0.7f, 1f), Random.Range(0.7f, 1f));
         eggStats.tex = GetComponent<SpriteRenderer>().sprite.texture;
+
+        GameObject.Find("EnemyEggStatus").GetComponent<Image>().sprite = GetComponent<SpriteRenderer>().sprite;
+        GameObject.Find("EnemyEggStatus").GetComponent<Image>().color = GetComponent<SpriteRenderer>().color;
     }
 
 }

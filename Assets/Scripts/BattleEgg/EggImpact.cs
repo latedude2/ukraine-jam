@@ -18,11 +18,13 @@ public class EggImpact : MonoBehaviour
 
     EggStats eggStats;
     private float fixedDeltaTime;
+    CheerManager cheerManager;
 
     void Start()
     {
         eggStats = GetComponent<EggStats>();
         slowmoSource = GameObject.FindWithTag("SlowmoSounds").GetComponent<AudioSource>();
+        cheerManager = GameObject.FindWithTag("CheerManager").GetComponent<CheerManager>();
     }
 
     void Update()
@@ -132,8 +134,10 @@ public class EggImpact : MonoBehaviour
                 } else if(targetHitAngle > hitZoneAngles[4] || targetHitAngle < hitZoneAngles[3]){
                     targetHitZone = 4;
                 }
-
-                //!!!DOVI USE AVERAGEPOS FOR IMPACT POSITION HERE!!!
+                if(force > 10f)
+                {
+                    cheerManager.PlayCheer();
+                }
                 //instantiate impact particle at averagePos
                 GameObject impactParticle = Instantiate(impactCollisionParticle, averagePos, Quaternion.identity) as GameObject;
                 Destroy(impactParticle, 3f);
