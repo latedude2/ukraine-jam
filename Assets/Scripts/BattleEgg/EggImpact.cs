@@ -64,16 +64,25 @@ public class EggImpact : MonoBehaviour
         this.fixedDeltaTime = Time.fixedDeltaTime;
     }
     void Slowmo(){
-        if(enemyEgg != null){
+        if(enemyEgg != null && GetComponent<EggStats>().isPlayer){
             float dist = Vector3.Distance(enemyEgg.transform.position, transform.position);
             if (dist < 1){
-                Time.timeScale = .1f;
-                slowmoSource.volume = .7f;
-                slowmoSource.pitch = .1f;
+                Vector2 relativeVelocity = transform.GetComponent<Rigidbody2D>().velocity - enemyEgg.GetComponent<Rigidbody2D>().velocity;
+                if (relativeVelocity.magnitude > 20){
+                    Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
+                    Time.timeScale = .1f;
+                    slowmoSource.volume = .7f;
+                    slowmoSource.pitch = .1f;
+                } 
             } else if (dist < 2){
+                //calculate relative velocity between enemy rigidbody and player rigidbody
+                Vector2 relativeVelocity = transform.GetComponent<Rigidbody2D>().velocity - enemyEgg.GetComponent<Rigidbody2D>().velocity;
+                if (relativeVelocity.magnitude > 20){
+                Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
                 Time.timeScale = .2f;
                 slowmoSource.volume = Mathf.Lerp(.7f, .0f, dist-1);
                 slowmoSource.pitch = Mathf.Lerp(.1f, .8f, dist-1);
+                }
             } else {
                 Time.timeScale = 1.0f;
                 slowmoSource.volume = 0;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EggStats : MonoBehaviour
 {
     //-----------------------''
-    bool isPlayer = false;
+    public bool isPlayer = false;
 
     AudioSource audioSource;
     public AudioClip[] audioClips;

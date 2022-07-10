@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Victory 5.unity
     guid: f6ad435ba5c42d44d9b97567e86563ca
+  - enabled: 1
+    path: Assets/Scenes/IntroStory.unity
+    guid: f859a8eb316ffd44c9619de9fa31c52f
   m_configObjects: {}

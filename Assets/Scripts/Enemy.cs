@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
     void RandomizeSkin()
     {
         GetComponent<SpriteRenderer>().sprite = enemySprites[Random.Range(0, enemySprites.Count)];
-        GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.2f, 1f), Random.Range(0.2f, 1f), Random.Range(0.2f, 1f));
+        GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.7f, 1f), Random.Range(0.7f, 1f), Random.Range(0.7f, 1f));
         eggStats.tex = GetComponent<SpriteRenderer>().sprite.texture;
     }
 

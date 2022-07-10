@@ -95,7 +95,7 @@ public class EggStatView : MonoBehaviour
                     //Load battle scene
                     if (GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
                     {
-                        SceneManager.LoadScene("StoryBattle " + (progression.Level + 1));
+                        SceneManager.LoadScene("IntroStory");
                     }
                     else 
                     {
