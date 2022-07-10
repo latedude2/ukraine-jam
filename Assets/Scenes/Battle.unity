@@ -374,9 +374,17 @@ MonoBehaviour:
   - {fileID: 789949115}
   - {fileID: 142144399}
   enemySprites:
-  - {fileID: 21300000, guid: df8622e21c6dc24429c44cf6b67cb243, type: 3}
+  - {fileID: 21300000, guid: e3a869728f96f8a4cab5cdeb34b56c47, type: 3}
+  - {fileID: 21300000, guid: e9cca0d8eb89590468e56d8b0c0fb6ba, type: 3}
+  - {fileID: 21300000, guid: 51c5021819f37654085fb39ecffc2316, type: 3}
   - {fileID: 21300000, guid: 10f800f26bcb4dc4eb658aedbe6d0e77, type: 3}
   - {fileID: 21300000, guid: 2010abe396878f542aac47db36aab70f, type: 3}
+  - {fileID: 21300000, guid: cb3d3fa9b76370c448d654d9fad71610, type: 3}
+  - {fileID: 21300000, guid: 745ed3ff482d72648b712a4ecc7dfa29, type: 3}
+  - {fileID: 21300000, guid: 848d6f1d7f121e24f97fe9e72d5e9fc7, type: 3}
+  - {fileID: 21300000, guid: 2e046fb5a6ee6a849963807326f48ece, type: 3}
+  - {fileID: 21300000, guid: 1eb8d46848b0e7b4fa5ace7735ff76b4, type: 3}
+  - {fileID: 21300000, guid: df8622e21c6dc24429c44cf6b67cb243, type: 3}
   speed: 200
 --- !u!1001 &250759725
 PrefabInstance:
