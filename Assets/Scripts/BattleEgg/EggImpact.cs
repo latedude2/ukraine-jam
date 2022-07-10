@@ -24,7 +24,7 @@ public class EggImpact : MonoBehaviour
     {
         eggStats = GetComponent<EggStats>();
         slowmoSource = GameObject.FindWithTag("SlowmoSounds").GetComponent<AudioSource>();
-        cheerManager = GameObject.FindWithTag("CheerManager").GetComponent<CheerManager>();
+        cheerManager = GameObject.Find("CheerManager").GetComponent<CheerManager>();
     }
 
     void Update()
