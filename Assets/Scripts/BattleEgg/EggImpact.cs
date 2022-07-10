@@ -71,7 +71,7 @@ public class EggImpact : MonoBehaviour
             if (dist < 1){
                 Vector2 relativeVelocity = transform.GetComponent<Rigidbody2D>().velocity - enemyEgg.GetComponent<Rigidbody2D>().velocity;
                 if (relativeVelocity.magnitude > 20){
-                    Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
+                    //Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
                     Time.timeScale = .1f;
                     slowmoSource.volume = .7f;
                     slowmoSource.pitch = .1f;
@@ -80,7 +80,7 @@ public class EggImpact : MonoBehaviour
                 //calculate relative velocity between enemy rigidbody and player rigidbody
                 Vector2 relativeVelocity = transform.GetComponent<Rigidbody2D>().velocity - enemyEgg.GetComponent<Rigidbody2D>().velocity;
                 if (relativeVelocity.magnitude > 20){
-                Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
+                //Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
                 Time.timeScale = .2f;
                 slowmoSource.volume = Mathf.Lerp(.7f, .0f, dist-1);
                 slowmoSource.pitch = Mathf.Lerp(.1f, .8f, dist-1);
@@ -134,7 +134,7 @@ public class EggImpact : MonoBehaviour
                 } else if(targetHitAngle > hitZoneAngles[4] || targetHitAngle < hitZoneAngles[3]){
                     targetHitZone = 4;
                 }
-                if(force > 10f)
+                if(force > 20f)
                 {
                     cheerManager.PlayCheer();
                 }

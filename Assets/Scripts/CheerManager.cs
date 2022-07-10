@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CheerManager : MonoBehaviour
 {
-    bool VolumeIncreasing = false;
-    float peakVolume = 0.3f;
-    float volumeIncreaseSpeed = 1f;
+    public bool VolumeIncreasing = false;
+    float peakVolume = 0.4f;
+    float volumeIncreaseSpeed = 0.5f;
     float volumeDecreaseSpeed = 0.2f;
     // Start is called before the first frame update
     void Start()
@@ -26,16 +26,18 @@ public class CheerManager : MonoBehaviour
     {
         if(VolumeIncreasing)
         {
-            if(AudioListener.volume < peakVolume)
+            Debug.Log("Increasing Volume");
+            if(GetComponent<AudioSource>().volume < peakVolume)
             {
-                AudioListener.volume += volumeIncreaseSpeed * Time.deltaTime;
+                GetComponent<AudioSource>().volume += volumeIncreaseSpeed * Time.deltaTime;
             }
-            if(AudioListener.volume >= peakVolume)
+            if(GetComponent<AudioSource>().volume >= peakVolume)
             {
+                Debug.Log("Volume Reached Peak");
                 VolumeIncreasing = false;
             }
         }
-        if(GetComponent<AudioSource>().volume > 0 && !VolumeIncreasing)
+        if(GetComponent<AudioSource>().volume > 0.1f && !VolumeIncreasing)
         {
             GetComponent<AudioSource>().volume -= volumeDecreaseSpeed * Time.deltaTime;
         }
@@ -43,6 +45,7 @@ public class CheerManager : MonoBehaviour
 
     public void PlayCheer()
     {
+        Debug.Log("Cheer!");
         if(!VolumeIncreasing) VolumeIncreasing = true;
     }
 }
