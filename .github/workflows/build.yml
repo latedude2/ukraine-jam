@@ -15,6 +15,7 @@ jobs:
           - StandaloneLinux64 # Build a Linux 64-bit standalone.
           - WebGL # WebGL.
           - StandaloneOSX 
+          - Android # Build an Android .apk standalone app.
         testMode:
             - playmode
     steps:
