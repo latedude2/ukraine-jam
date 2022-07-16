@@ -30,6 +30,7 @@ public class EggStats : MonoBehaviour
 
     public Texture2D tex;
 
+    Color[] shellColors = new Color[5];
     void Start()
     {
         if (GetComponent<EggControl>() != null) {
@@ -56,6 +57,9 @@ public class EggStats : MonoBehaviour
             AdjustEnemyStatsBasedOnLevel();
         }
         tex = GetComponent<SpriteRenderer>().sprite.texture;
+        for (int i = 0; i < shellColors.Length; i++){
+           shellColors[i] = tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)] * GetComponent<SpriteRenderer>().color;
+        }
     }
 
     public void AdjustEnemyStatsBasedOnLevel()
@@ -123,7 +127,7 @@ public class EggStats : MonoBehaviour
         if (currentHealthTop <= 0 || currentHealthTopLeft <= 0 || currentHealthBottomRight <= 0 || currentHealthBottomLeft <= 0 || currentHealthTopRight <= 0){
             GameObject burstParticle = Instantiate(destructionParticle, gameObject.transform.position, Quaternion.identity) as GameObject;
             ParticleSystem.MainModule settings = burstParticle.GetComponent<ParticleSystem>().main;
-            settings.startColor = new ParticleSystem.MinMaxGradient(tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)] * GetComponent<SpriteRenderer>().color);
+            settings.startColor = new ParticleSystem.MinMaxGradient(shellColors[(int)Random.Range(0,5)]);
             AudioManager.Instance.Slowmo(false);
             Destroy(gameObject);
         }
