@@ -12,6 +12,8 @@ public class LoadSceneAfterTime : MonoBehaviour
 
     void LoadMainMenu()
     {
+        GameObject playerStats = GameObject.Find("PlayerStats");
+        if(playerStats != null) playerStats.GetComponent<Progression>().Level = 0;
         SceneManager.LoadScene("MainMenu");
     }
 }
