@@ -8,6 +8,7 @@ public class UpgradeButtonSetup : MonoBehaviour
     public Button TipSharpnessButton, ShellTopButton, TopRightShellButton;
     public Button TopLeftShellButton, BottomRightShellButton, BottomLeftShellButton;
     public Button EggGripButton;
+    public Button nextBattleButton;
 
     int upgradesLeft = 1;
 
@@ -67,6 +68,7 @@ public class UpgradeButtonSetup : MonoBehaviour
             Destroy(BottomRightShellButton);
             Destroy(BottomLeftShellButton);
             Destroy(EggGripButton);
+            nextBattleButton.interactable = true;
             buttonSoundManager.PlayOnButtonClick();
         }
     }

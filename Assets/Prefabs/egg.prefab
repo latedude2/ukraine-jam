@@ -300,12 +300,12 @@ MonoBehaviour:
   currentHealthBottomLeft: 100
   currentHealthTopLeft: 100
   currentHealthTopRight: 100
-  EggThicknessTop: 100
-  EggThicknessBottomRight: 100
-  EggThicknessBottomLeft: 100
+  EggThicknessTop: 150
+  EggThicknessBottomRight: 120
+  EggThicknessBottomLeft: 120
   EggThicknessTopLeft: 100
   EggThicknessTopRight: 100
-  EggTipSharpness: 1
+  EggTipSharpness: 1.2
   EggGrip: 1
   tex: {fileID: 0}
 --- !u!114 &3771690946175677490

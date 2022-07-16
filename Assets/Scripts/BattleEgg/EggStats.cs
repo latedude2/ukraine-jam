@@ -81,16 +81,19 @@ public class EggStats : MonoBehaviour
             audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
             audioSource.Play();
         } 
+
+        float forceCoefficient = 80f;
+
         if (side == 0) {    //tip
-            return force * 50f * EggTipSharpness;
+            return force * forceCoefficient * EggTipSharpness;
         } else if (side == 1){  //right top
-            return force * 50f;
+            return force * forceCoefficient;
         } else if (side == 2){  //right bottom
-            return force * 50f;
+            return force * forceCoefficient;
         } else if (side == 3){  //left bottom
-            return force * 50f;
+            return force * forceCoefficient;
         } else if (side == 4){  //left top
-            return force * 50f;
+            return force * forceCoefficient;
         }
        
         return 0;
