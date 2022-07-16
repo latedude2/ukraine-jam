@@ -378,6 +378,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 10f800f26bcb4dc4eb658aedbe6d0e77, type: 3}
   - {fileID: 21300000, guid: 2010abe396878f542aac47db36aab70f, type: 3}
   speed: 200
+  wayPointProgressDist: 0.1
+  targetPlayerChance: 15
 --- !u!114 &181357690
 MonoBehaviour:
   m_ObjectHideFlags: 0
