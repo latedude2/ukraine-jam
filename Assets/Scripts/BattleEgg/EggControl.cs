@@ -54,7 +54,7 @@ public class EggControl : MonoBehaviour
         }
 
         //if mouse is released, stop egg
-        if ((Input.GetMouseButtonUp(0) || Input.touchCount == 0) && eggIsFollowing)
+        if ((Input.GetMouseButtonUp(0) || (!isWebGL && Input.touchCount == 0)) && eggIsFollowing)
         {
             //remove spring joint
             Destroy(GetComponent<SpringJoint2D>());
