@@ -16,6 +16,7 @@ public class EggControl : MonoBehaviour
     Rigidbody2D mouseFollower;
     bool isWebGL = false;
     float touchDist = 1f;
+    public SpriteRenderer cursorAssist;
     void Start() {
         #if UNITY_WEBGL
             isWebGL = true;
@@ -25,6 +26,7 @@ public class EggControl : MonoBehaviour
         #endif
         eggGrip = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggGrip;
         mouseFollower = GameObject.Find("MouseFollower").GetComponent<Rigidbody2D>();
+        cursorAssist = Instantiate(cursorAssist, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -51,7 +53,20 @@ public class EggControl : MonoBehaviour
             spring.breakForce = eggGrip * 1000f;
             spring.distance = 0;
             spring.autoConfigureDistance = false;
+            cursorAssist.enabled = true;
         }
+        
+        
+        Vector3 mousePositionUhh = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if(!isWebGL)
+            mousePositionUhh = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);  
+        mousePositionUhh.z = 0;
+        cursorAssist.transform.position = mousePositionUhh;
+
+        if (spring == null) {
+            cursorAssist.enabled = false;
+        }
+        
 
         //if mouse is released, stop egg
         if ((Input.GetMouseButtonUp(0) || (!isWebGL && Input.touchCount == 0)) && eggIsFollowing)
@@ -59,6 +74,7 @@ public class EggControl : MonoBehaviour
             //remove spring joint
             Destroy(GetComponent<SpringJoint2D>());
             eggIsFollowing = false;
+            cursorAssist.enabled = false;
         }
 
     }
