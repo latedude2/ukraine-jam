@@ -15,7 +15,7 @@ public class EggControl : MonoBehaviour
     SpringJoint2D spring;
     Rigidbody2D mouseFollower;
     bool isWebGL = false;
-    float touchDist = 1f;
+    float touchDist = 1.5f;
     public SpriteRenderer cursorAssist;
     void Start() {
         #if UNITY_WEBGL
