@@ -7,10 +7,12 @@ public class EggPlayerUI : MonoBehaviour
 {
     public GameObject[] eggUIHealth = new GameObject[5];
     public HealthWarning healthWarning;
+    BattleUI healthUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        healthUI = FindObjectOfType<BattleUI>();
         healthWarning = GameObject.FindObjectOfType<HealthWarning>();
     }
 
@@ -20,13 +22,25 @@ public class EggPlayerUI : MonoBehaviour
         
     }
 
-    public void UpdateUIHealth(){
-        Color c = Color.red;
-        healthWarning.top.color = new Color(c.r, c.g, c.b, GetComponent<EggStats>().currentHealthTop);
-        healthWarning.topLeft.color = new Color(c.r, c.g, c.b, GetComponent<EggStats>().currentHealthTopLeft);
-        healthWarning.topRight.color = new Color(c.r, c.g, c.b, GetComponent<EggStats>().currentHealthTopRight);
-        healthWarning.bottomLeft.color = new Color(c.r, c.g, c.b, GetComponent<EggStats>().currentHealthBottomLeft);
-        healthWarning.bottomRight.color = new Color(c.r, c.g, c.b, GetComponent<EggStats>().currentHealthBottomRight);
+    public void UpdateUIHealth(bool isPlayer){
+        // Color c = Color.red;
+        // if (isPlayer)
+        // {
+        //     healthUI.playerUI.top.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthTop / 100f);
+        //     healthUI.playerUI.topLeft.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthTopLeft / 100f);
+        //     healthUI.playerUI.topRight.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthTopRight / 100f);
+        //     healthUI.playerUI.bottomLeft.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthBottomLeft / 100f);
+        //     healthUI.playerUI.bottomRight.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthBottomRight / 100f);
+        // }
+        // else
+        // {
+        //     healthUI.enemyUI.top.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthTop / 100f);
+        //     healthUI.enemyUI.topLeft.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthTopLeft / 100f);
+        //     healthUI.enemyUI.topRight.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthTopRight / 100f);
+        //     healthUI.enemyUI.bottomLeft.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthBottomLeft / 100f);
+        //     healthUI.enemyUI.bottomRight.color = new Color(c.r, c.g, c.b, 1 - GetComponent<EggStats>().currentHealthBottomRight / 100f);
+
+        // }
         // eggUIHealth[0].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthTop) + "%";
         // eggUIHealth[1].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthTopRight) + "%";
         // eggUIHealth[2].GetComponent<Text>().text = Mathf.Round(GetComponent<EggStats>().currentHealthBottomRight) + "%";
