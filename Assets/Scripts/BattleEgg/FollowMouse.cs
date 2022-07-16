@@ -22,7 +22,11 @@ public class FollowMouse : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
             transform.position = mousePosition;
-            cursorAssist.GetComponent<SpriteRenderer>().enabled = true;
+            if (Input.GetMouseButtonDown(0)){
+                cursorAssist.GetComponent<SpriteRenderer>().enabled = true;
+            } else {
+                cursorAssist.GetComponent<SpriteRenderer>().enabled = false;
+            }
         } else if (Input.touchCount > 0) {
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             touchPosition.z = 0;
