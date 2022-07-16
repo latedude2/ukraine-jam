@@ -29,10 +29,12 @@ public class EggControl : MonoBehaviour
     {   
         CheckTouchDist();
 
-        if(Input.GetMouseButtonDown(0) && eggIsHovered)
+        if((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && eggIsHovered && !eggIsFollowing)
         {
             eggIsFollowing = true;
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if(!isWebGL)
+                mousePosition = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);  
             mousePosition.z = 0;        
             //Create 2d spring connecting the mouse position to where the mouse pressed the egg 
             spring = gameObject.AddComponent<SpringJoint2D>();
@@ -49,7 +51,7 @@ public class EggControl : MonoBehaviour
         }
 
         //if mouse is released, stop egg
-        if (Input.GetMouseButtonUp(0) && eggIsFollowing)
+        if ((Input.GetMouseButtonUp(0) || Input.touchCount == 0) && eggIsFollowing)
         {
             //remove spring joint
             Destroy(GetComponent<SpringJoint2D>());
