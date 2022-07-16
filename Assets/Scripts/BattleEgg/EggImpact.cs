@@ -24,7 +24,13 @@ public class EggImpact : MonoBehaviour
     public AudioMixerSnapshot slowmoSnapshot;
     public AudioMixerSnapshot defaultSnapshot;
     public float transitionTime = 1;
-    private bool slowmoOn = false;
+    private enum SlowmoState {
+        Default,
+        Slow,
+        Slowest
+    }
+
+    SlowmoState slowmoState = SlowmoState.Default;
 
     void Start()
     {
@@ -79,11 +85,11 @@ public class EggImpact : MonoBehaviour
                 if (relativeVelocity.magnitude > 20){
                     //Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
                     Time.timeScale = .1f;
-                    slowmoSource.volume = .7f;
-                    slowmoSource.pitch = .1f;
-                    if (!slowmoOn) {
-                        slowmoSnapshot.TransitionTo(transitionTime/Time.timeScale);
-                        slowmoOn = true;
+                    // slowmoSource.volume = .7f;
+                    // slowmoSource.pitch = .1f;
+                    if (slowmoState != SlowmoState.Slowest) {
+                        slowmoSnapshot.TransitionTo(Time.timeScale * transitionTime);
+                        slowmoState = SlowmoState.Slowest;
                     }
                 } 
             } else if (dist < 2){
@@ -92,20 +98,20 @@ public class EggImpact : MonoBehaviour
                 if (relativeVelocity.magnitude > 20){
                 //Debug.Log("Slowmo: " + transform.GetComponent<Rigidbody2D>().velocity.magnitude);
                 Time.timeScale = .2f;
-                slowmoSource.volume = Mathf.Lerp(.7f, .0f, dist-1);
-                slowmoSource.pitch = Mathf.Lerp(.1f, .8f, dist-1);
-                    if (!slowmoOn) {
-                        slowmoSnapshot.TransitionTo(transitionTime/Time.timeScale);
-                        slowmoOn = true;
+                // slowmoSource.volume = Mathf.Lerp(.7f, .0f, dist-1);
+                // slowmoSource.pitch = Mathf.Lerp(.1f, .8f, dist-1);
+                    if (slowmoState != SlowmoState.Slow) {
+                        slowmoSnapshot.TransitionTo(Time.timeScale * transitionTime);
+                        slowmoState = SlowmoState.Slow;
                     }
                 }
             } else {
                 Time.timeScale = 1.0f;
-                slowmoSource.volume = 0;
-                slowmoSource.pitch = .8f;
-                if (slowmoOn) {
-                    defaultSnapshot.TransitionTo(transitionTime/Time.timeScale);
-                    slowmoOn = false;
+                // slowmoSource.volume = 0;
+                // slowmoSource.pitch = .8f;
+                if (slowmoState != SlowmoState.Default) {
+                    defaultSnapshot.TransitionTo(Time.timeScale * transitionTime);
+                    slowmoState = SlowmoState.Default;
                 }
             }
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
