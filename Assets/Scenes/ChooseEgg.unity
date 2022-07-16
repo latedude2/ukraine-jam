@@ -1664,7 +1664,7 @@ MonoBehaviour:
   EggThicknessTopLeft: 110
   EggThicknessTopRight: 110
   EggTipSharpness: 1.8
-  EggGrip: 0.2
+  EggGrip: 0.3
   EggSprite: {fileID: 0}
   EggColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1211045603

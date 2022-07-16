@@ -14,14 +14,21 @@ public class EggControl : MonoBehaviour
 
     SpringJoint2D spring;
     Rigidbody2D mouseFollower;
+    bool isWebGL = false;
+    float touchDist = 1f;
     void Start() {
+        #if UNITY_WEBGL
+            isWebGL = true;
+        #endif
         eggGrip = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggGrip;
         mouseFollower = GameObject.Find("MouseFollower").GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        CheckTouchDist();
+
         if(Input.GetMouseButtonDown(0) && eggIsHovered)
         {
             eggIsFollowing = true;
@@ -51,13 +58,31 @@ public class EggControl : MonoBehaviour
 
     }
 
+    void CheckTouchDist(){
+        if(isWebGL == false)
+        {
+            float dist = Vector3.Distance(transform.position, mouseFollower.transform.position);
+            if (dist < touchDist)
+            {
+                eggIsHovered = true;
+            } else {
+                eggIsHovered = false;
+            }
+        }
+    }
+
     void OnMouseEnter()
     {
-        eggIsHovered = true;
+        if(isWebGL == true)
+        {
+            eggIsHovered = true;
+        }
     }
 
     void OnMouseExit() {
-        eggIsHovered = false;
+        if(isWebGL == true) 
+        {
+            eggIsHovered = false;
+        }
     }
-
 }
