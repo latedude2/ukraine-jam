@@ -34,9 +34,14 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(isPlayerIdle == true){  
+            if (Vector3.Distance(playerEgg.transform.position, playerPrevPosition) > .5f){
+                isPlayerIdle = false;
+            }
+        }
+
         if (waypoints.Count > 0)
         {
-
             if (isPlayerTarget){
                 Vector3 direction = playerEgg.transform.position - transform.position;
                 rb.AddForce(direction.normalized * speed);
@@ -55,6 +60,32 @@ public class Enemy : MonoBehaviour
                         if(Random.Range(0,100) < targetPlayerChance)
                         {
                             isPlayerTarget = true;
+                        }
+                    } else {    //Make egg wait in other side of battlefield
+                        if (playerEgg.transform.position.x < 0){    //Player is on left side
+                            if(followedWaypoint == 1){
+                                followedWaypoint = 2;
+                            } else if (followedWaypoint == 2) {
+                                followedWaypoint = 1;
+                            } else {
+                                followedWaypoint++;
+                                if (followedWaypoint >= waypoints.Count)
+                                {
+                                    followedWaypoint = 0;
+                                }
+                            }
+                        } else {    //Player is on right side
+                            if(followedWaypoint == 0){
+                                followedWaypoint = 3;
+                            } else if (followedWaypoint == 3) {
+                                followedWaypoint = 0;
+                            } else {
+                                followedWaypoint++;
+                                if (followedWaypoint >= waypoints.Count)
+                                {
+                                    followedWaypoint = 0;
+                                }
+                            }
                         }
                     }
                 }
@@ -84,14 +115,13 @@ public class Enemy : MonoBehaviour
     }
 
     IEnumerator DetectPlayerIdle(){
-        Debug.Log(Vector3.Distance(playerEgg.transform.position, playerPrevPosition));
         if (Vector3.Distance(playerEgg.transform.position, playerPrevPosition) < .4f){
             isPlayerIdle = true;
         } else {
             isPlayerIdle = false;
+            playerPrevPosition = playerEgg.transform.position;
         }
-        playerPrevPosition = playerEgg.transform.position;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         StartCoroutine(DetectPlayerIdle());
     }
 
