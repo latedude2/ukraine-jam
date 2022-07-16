@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class EggImpact : MonoBehaviour
@@ -18,7 +19,12 @@ public class EggImpact : MonoBehaviour
 
     EggStats eggStats;
     private float fixedDeltaTime;
+    
     CheerManager cheerManager;
+    public AudioMixerSnapshot slowmoSnapshot;
+    public AudioMixerSnapshot defaultSnapshot;
+    public float transitionTime = 1;
+    private bool slowmoOn = false;
 
     void Start()
     {
@@ -75,6 +81,10 @@ public class EggImpact : MonoBehaviour
                     Time.timeScale = .1f;
                     slowmoSource.volume = .7f;
                     slowmoSource.pitch = .1f;
+                    if (!slowmoOn) {
+                        slowmoSnapshot.TransitionTo(transitionTime/Time.timeScale);
+                        slowmoOn = true;
+                    }
                 } 
             } else if (dist < 2){
                 //calculate relative velocity between enemy rigidbody and player rigidbody
@@ -84,16 +94,25 @@ public class EggImpact : MonoBehaviour
                 Time.timeScale = .2f;
                 slowmoSource.volume = Mathf.Lerp(.7f, .0f, dist-1);
                 slowmoSource.pitch = Mathf.Lerp(.1f, .8f, dist-1);
+                    if (!slowmoOn) {
+                        slowmoSnapshot.TransitionTo(transitionTime/Time.timeScale);
+                        slowmoOn = true;
+                    }
                 }
             } else {
                 Time.timeScale = 1.0f;
                 slowmoSource.volume = 0;
                 slowmoSource.pitch = .8f;
+                if (slowmoOn) {
+                    defaultSnapshot.TransitionTo(transitionTime/Time.timeScale);
+                    slowmoOn = false;
+                }
             }
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         } else {
-                slowmoSource.volume = 0;
-                slowmoSource.pitch = .8f;
+                // slowmoSource.volume = 0;
+                // slowmoSource.pitch = .8f;
+                // defaultSnapshot.TransitionTo(transitionTime/Time.timeScale);
         }
     }
 

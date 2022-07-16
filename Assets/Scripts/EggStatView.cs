@@ -14,8 +14,12 @@ public class EggStatView : MonoBehaviour
     Text thicknessBottomRight;
     Text thicknessTopRight;
 
+    [SerializeField] GameObject continueButton;
+
     Progression progression;
     ButtonSoundManager buttonSoundManager;
+
+    public EggManager chosenEggManager;
 
     void Start()
     {
@@ -35,7 +39,10 @@ public class EggStatView : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "ChooseEgg")
         {
-            ShowHoveredEggStats();
+            if(Input.GetMouseButtonDown(0))
+            {
+                ShowPressedEggStats();
+            }
         }
         else if (SceneManager.GetActiveScene().name == "UpgradeEgg")
         {
@@ -56,7 +63,7 @@ public class EggStatView : MonoBehaviour
         }
     }
 
-    void ShowHoveredEggStats()
+    void ShowPressedEggStats()
     {
         eggs = GameObject.FindGameObjectsWithTag("Egg");
         RaycastHit2D[] hit;
@@ -73,36 +80,38 @@ public class EggStatView : MonoBehaviour
             if(eggs.Count != 0)
             {
                 eggs[0].transform.gameObject.GetComponent<UIEgg>().Select(true);
-                EggManager chosenEggManager = eggs[0].transform.gameObject.GetComponent<EggManager>();
+                chosenEggManager = eggs[0].transform.gameObject.GetComponent<EggManager>();
                 thicknessTop.text = chosenEggManager.EggThicknessTop.ToString();
                 thicknessBottomRight.text = chosenEggManager.EggThicknessBottomRight.ToString();
                 thicknessTopRight.text = chosenEggManager.EggThicknessTopRight.ToString();
                 grip.text = chosenEggManager.EggGrip.ToString();
                 tipSharpness.text = chosenEggManager.EggTipSharpness.ToString();
-                if(Input.GetMouseButtonDown(0))
-                {
-                    EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-                    eggManager.EggGrip = chosenEggManager.EggGrip;
-                    eggManager.EggTipSharpness = chosenEggManager.EggTipSharpness;
-                    eggManager.EggThicknessTop = chosenEggManager.EggThicknessTop;
-                    eggManager.EggThicknessBottomRight = chosenEggManager.EggThicknessBottomRight;
-                    eggManager.EggThicknessBottomLeft = chosenEggManager.EggThicknessBottomLeft;
-                    eggManager.EggThicknessTopLeft = chosenEggManager.EggThicknessTopLeft;
-                    eggManager.EggThicknessTopRight = chosenEggManager.EggThicknessTopRight;
-                    eggManager.EggSprite = chosenEggManager.GetComponent<SpriteRenderer>().sprite;
-                    eggManager.EggColor = chosenEggManager.GetComponent<SpriteRenderer>().color;
-                    buttonSoundManager.PlayOnButtonClick();
-                    //Load battle scene
-                    if (GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
-                    {
-                        SceneManager.LoadScene("IntroStory");
-                    }
-                    else 
-                    {
-                        SceneManager.LoadScene("Battle");
-                    }
-                }
+                continueButton.SetActive(true);
             }
+        }
+    }
+
+    public void ConfirmSelection()
+    {
+        EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
+        eggManager.EggGrip = chosenEggManager.EggGrip;
+        eggManager.EggTipSharpness = chosenEggManager.EggTipSharpness;
+        eggManager.EggThicknessTop = chosenEggManager.EggThicknessTop;
+        eggManager.EggThicknessBottomRight = chosenEggManager.EggThicknessBottomRight;
+        eggManager.EggThicknessBottomLeft = chosenEggManager.EggThicknessBottomLeft;
+        eggManager.EggThicknessTopLeft = chosenEggManager.EggThicknessTopLeft;
+        eggManager.EggThicknessTopRight = chosenEggManager.EggThicknessTopRight;
+        eggManager.EggSprite = chosenEggManager.GetComponent<SpriteRenderer>().sprite;
+        eggManager.EggColor = chosenEggManager.GetComponent<SpriteRenderer>().color;
+        buttonSoundManager.PlayOnButtonClick();
+        //Load battle scene
+        if (GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
+        {
+            SceneManager.LoadScene("IntroStory");
+        }
+        else 
+        {
+            SceneManager.LoadScene("Battle");
         }
     }
 }

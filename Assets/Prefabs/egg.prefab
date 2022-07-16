@@ -277,6 +277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactShellParticle: {fileID: 5866780773250341746, guid: f530323973a2be744b3a9387bd09ad54, type: 3}
   impactCollisionParticle: {fileID: 4594496118291942783, guid: a6e387eda90576d44932d8e28b5e6dc6, type: 3}
+  slowmoSnapshot: {fileID: 2382327028471852784, guid: d3a697370f5824a2fa5e25acdb09f0f0, type: 2}
+  defaultSnapshot: {fileID: 24500006, guid: d3a697370f5824a2fa5e25acdb09f0f0, type: 2}
+  transitionTime: 0.2
 --- !u!114 &8349598860931002356
 MonoBehaviour:
   m_ObjectHideFlags: 0
