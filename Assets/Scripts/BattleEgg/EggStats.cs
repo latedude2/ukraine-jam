@@ -31,6 +31,7 @@ public class EggStats : MonoBehaviour
     public Texture2D tex;
 
     Color[] shellColors = new Color[5];
+    public EggImpact eggImpact;
     void Start()
     {
         if (GetComponent<EggControl>() != null) {
@@ -60,6 +61,7 @@ public class EggStats : MonoBehaviour
         for (int i = 0; i < shellColors.Length; i++){
            shellColors[i] = tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)] * GetComponent<SpriteRenderer>().color;
         }
+        eggImpact.ApplyShellColor(this);
     }
 
     public void AdjustEnemyStatsBasedOnLevel()
