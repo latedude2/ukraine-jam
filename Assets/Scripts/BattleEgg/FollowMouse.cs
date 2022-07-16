@@ -10,9 +10,9 @@ public class FollowMouse : MonoBehaviour
         #if UNITY_WEBGL
             isWebGL = true;
         #endif
-        //#if UNITY_EDITOR
-        //    isWebGL = true;
-        //#endif
+        #if UNITY_EDITOR
+            isWebGL = true;
+        #endif
     }
     // Update is called once per frame
     void Update()

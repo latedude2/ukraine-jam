@@ -32,6 +32,7 @@ public class EggStats : MonoBehaviour
     BattleUI healthUI;
 
     Color[] shellColors = new Color[5];
+    public EggImpact eggImpact;
     void Start()
     {
         if (GetComponent<EggControl>() != null) {
@@ -63,6 +64,7 @@ public class EggStats : MonoBehaviour
         }
 
         healthUI = FindObjectOfType<BattleUI>();
+        eggImpact.ApplyShellColor(this);
     }
 
     public void AdjustEnemyStatsBasedOnLevel()
