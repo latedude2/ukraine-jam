@@ -39,8 +39,10 @@ public class EggImpact : MonoBehaviour
         eggStats = GetComponent<EggStats>();
         slowmoSource = GameObject.FindWithTag("SlowmoSounds").GetComponent<AudioSource>();
         cheerManager = GameObject.Find("CheerManager").GetComponent<CheerManager>();
+    }
+    public void ApplyShellColor(EggStats me){
         for (int i = 0; i < shellColors.Length; i++){
-           shellColors[i] = eggStats.tex.GetPixels32()[Random.Range(0,eggStats.tex.GetPixels32().Length)]*GetComponent<SpriteRenderer>().color;
+           shellColors[i] = me.tex.GetPixels32()[Random.Range(0,me.tex.GetPixels32().Length)]*GetComponent<SpriteRenderer>().color;
         }
     }
 
