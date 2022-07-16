@@ -29,6 +29,7 @@ public class EggStats : MonoBehaviour
     public float EggGrip = 1f; //The bigger the grip the more force for the spring to break
 
     public Texture2D tex;
+    BattleUI healthUI;
 
     Color[] shellColors = new Color[5];
     public EggImpact eggImpact;
@@ -61,6 +62,8 @@ public class EggStats : MonoBehaviour
         for (int i = 0; i < shellColors.Length; i++){
            shellColors[i] = tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)] * GetComponent<SpriteRenderer>().color;
         }
+
+        healthUI = FindObjectOfType<BattleUI>();
         eggImpact.ApplyShellColor(this);
     }
 
@@ -119,7 +122,15 @@ public class EggStats : MonoBehaviour
             currentHealthTopLeft -= incomingDamage / EggThicknessTopLeft; 
         }
         
-        GetComponent<EggPlayerUI>().UpdateUIHealth();
+        healthUI.UpdateUIHealth(
+            currentHealthTop,
+            currentHealthTopLeft,
+            currentHealthTopRight,
+            currentHealthBottomLeft,
+            currentHealthBottomRight,
+            isPlayer
+        );
+
         if (isPlayer){
             
             GameObject.Find("Main Camera").GetComponent<CameraShake>().shakeDuration = 0.2f;
