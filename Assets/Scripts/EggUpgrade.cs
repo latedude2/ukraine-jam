@@ -7,21 +7,21 @@ public class EggUpgrade : MonoBehaviour
     public void IncreaseEggTopThickness()
     {
         EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-        eggManager.EggThicknessTop += 10;
+        eggManager.EggThicknessTop += 30;
     }
 
     public void IncreaseEggBottomSideThickness()
     {
         EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-        eggManager.EggThicknessBottomRight += 20;
-        eggManager.EggThicknessBottomLeft += 20;
+        eggManager.EggThicknessBottomRight += 25;
+        eggManager.EggThicknessBottomLeft += 25;
     }
 
     public void IncreaseEggTopSideThickness()
     {
         EggManager eggManager = GameObject.Find("PlayerStats").GetComponent<EggManager>();
-        eggManager.EggThicknessTopRight += 10;
-        eggManager.EggThicknessTopLeft += 10;
+        eggManager.EggThicknessTopRight += 15;
+        eggManager.EggThicknessTopLeft += 15;
     }
 
     public void IncreaseEggTipSharpness()

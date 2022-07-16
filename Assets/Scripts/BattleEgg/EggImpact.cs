@@ -109,7 +109,7 @@ public class EggImpact : MonoBehaviour
             force /= col.contactCount;
             //Debug.Log("Impact force: " + force);
 
-            if(force > 5f){
+            if(force > 6f){
 
                 Vector2 sum = new Vector2(0,0);
                 int amount = 0;
