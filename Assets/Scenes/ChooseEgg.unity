@@ -839,6 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eggs: []
   continueButton: {fileID: 2109791270}
+  chosenEggManager: {fileID: 0}
 --- !u!4 &415329720
 Transform:
   m_ObjectHideFlags: 0
@@ -2519,7 +2520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -130.9, y: -74.29999}
+  m_AnchoredPosition: {x: -130, y: -44.661}
   m_SizeDelta: {x: 161.9, y: 58.332825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109791272

@@ -8,6 +8,11 @@ public class LoadLevels : MonoBehaviour
         SceneManager.LoadScene("Lose");
     }
 
+    public void LoadWinScene()
+    {
+        SceneManager.LoadScene("Win");
+    }
+
     public void LoadUpgradeScene()
     {
         SceneManager.LoadScene("UpgradeEgg");

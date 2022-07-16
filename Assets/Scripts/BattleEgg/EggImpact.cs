@@ -30,6 +30,8 @@ public class EggImpact : MonoBehaviour
         Slowest
     }
 
+    Color[] shellColors = new Color[5];
+
     SlowmoState slowmoState = SlowmoState.Default;
 
     void Start()
@@ -37,6 +39,9 @@ public class EggImpact : MonoBehaviour
         eggStats = GetComponent<EggStats>();
         slowmoSource = GameObject.FindWithTag("SlowmoSounds").GetComponent<AudioSource>();
         cheerManager = GameObject.Find("CheerManager").GetComponent<CheerManager>();
+        for (int i = 0; i < shellColors.Length; i++){
+           shellColors[i] = eggStats.tex.GetPixels32()[Random.Range(0,eggStats.tex.GetPixels32().Length)]*GetComponent<SpriteRenderer>().color;
+        }
     }
 
     void Update()
@@ -169,7 +174,7 @@ public class EggImpact : MonoBehaviour
                 //instantiate impact particle at averagePos
                 impactParticle = Instantiate(impactShellParticle, averagePos, Quaternion.identity) as GameObject;
                 ParticleSystem.MainModule settings = impactParticle.GetComponent<ParticleSystem>().main;
-                settings.startColor = new ParticleSystem.MinMaxGradient(eggStats.tex.GetPixels32()[Random.Range(0,eggStats.tex.GetPixels32().Length)]*GetComponent<SpriteRenderer>().color);
+                settings.startColor = new ParticleSystem.MinMaxGradient(shellColors[(int)Random.Range(0,5)]);
                 Destroy(impactParticle, 3f);
 
                 //Debug.Log("Force: " + force);
