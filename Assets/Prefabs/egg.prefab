@@ -263,6 +263,7 @@ MonoBehaviour:
   eggFollowForce: 2.5
   eggGrip: 1
   damping: 0.5
+  cursorAssist: {fileID: 5134583923004685933, guid: 4b75be20a0694cf4cb604767122ff11b, type: 3}
 --- !u!114 &1032456830
 MonoBehaviour:
   m_ObjectHideFlags: 0
