@@ -20,9 +20,9 @@ public class EggControl : MonoBehaviour
         #if UNITY_WEBGL
             isWebGL = true;
         #endif
-        //#if UNITY_EDITOR
-        //    isWebGL = true;
-        //#endif
+        #if UNITY_EDITOR
+            isWebGL = true;
+        #endif
         eggGrip = GameObject.Find("PlayerStats").GetComponent<EggManager>().EggGrip;
         mouseFollower = GameObject.Find("MouseFollower").GetComponent<Rigidbody2D>();
     }
