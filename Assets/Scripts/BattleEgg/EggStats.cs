@@ -124,6 +124,7 @@ public class EggStats : MonoBehaviour
             GameObject burstParticle = Instantiate(destructionParticle, gameObject.transform.position, Quaternion.identity) as GameObject;
             ParticleSystem.MainModule settings = burstParticle.GetComponent<ParticleSystem>().main;
             settings.startColor = new ParticleSystem.MinMaxGradient(tex.GetPixels32()[Random.Range(0,tex.GetPixels32().Length)] * GetComponent<SpriteRenderer>().color);
+            AudioManager.Instance.Slowmo(false);
             Destroy(gameObject);
         }
     }
