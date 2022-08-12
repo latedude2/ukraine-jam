@@ -839,7 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eggs: []
   continueButton: {fileID: 2109791270}
-  chosenEggManager: {fileID: 0}
+  chosenEggManager: {fileID: 8389732}
 --- !u!4 &415329720
 Transform:
   m_ObjectHideFlags: 0
