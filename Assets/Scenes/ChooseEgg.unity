@@ -839,7 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eggs: []
   continueButton: {fileID: 2109791270}
-  chosenEggManager: {fileID: 0}
+  chosenEggManager: {fileID: 8389732}
 --- !u!4 &415329720
 Transform:
   m_ObjectHideFlags: 0
@@ -2297,6 +2297,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683999623}
   m_CullTransparentMesh: 1
+--- !u!224 &683999627 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1224055857065241833, guid: 338a8131cac36a14083105cc26db7a05, type: 3}
+  m_PrefabInstance: {fileID: 683999622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1060835136
 GameObject:
   m_ObjectHideFlags: 0
@@ -3567,16 +3572,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109791270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.86175084, y: 0.86175084, z: 0.86175084}
   m_Children: []
-  m_Father: {fileID: 1224055857380512317}
+  m_Father: {fileID: 683999627}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -130, y: -44.661}
+  m_AnchoredPosition: {x: -112.02757, y: -38.48668}
   m_SizeDelta: {x: 161.9, y: 58.332825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109791272
@@ -3798,11 +3803,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 338a8131cac36a14083105cc26db7a05, type: 3}
---- !u!224 &1224055857380512317 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1224055857065241833, guid: 338a8131cac36a14083105cc26db7a05, type: 3}
-  m_PrefabInstance: {fileID: 1224055857380512316}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1726029469315789202
 Transform:
   m_ObjectHideFlags: 0
