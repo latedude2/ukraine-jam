@@ -20,6 +20,11 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadBattleScene()
     {
+        if(GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isDailyChallenge)
+        {
+            SceneManager.LoadScene("DailyChallenge");
+        }
+
         if(!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
         SceneManager.LoadScene("Battle");
         else LoadNextBattleStory();
@@ -28,6 +33,7 @@ public class LoadLevels : MonoBehaviour
     public void LoadChooseScene()
     {
         GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToStory(false);
+        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToDaily(false);
         SceneManager.LoadScene("ChooseEgg");
     }
 
@@ -54,8 +60,10 @@ public class LoadLevels : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void LoadDailyChallenge()
+    public void LoadChooseSceneAsDailyMode()
     {
-        SceneManager.LoadScene("DailyChallenge");
+        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToStory(false);
+        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToDaily(true);
+        SceneManager.LoadScene("ChooseEgg");
     }
 }

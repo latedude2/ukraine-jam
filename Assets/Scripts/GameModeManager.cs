@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameModeManager : MonoBehaviour
 {
     public bool isStoryMode = false;
+    public bool isDailyChallenge = false;
     void Start()
     {
         //implement singleton
@@ -21,5 +22,12 @@ public class GameModeManager : MonoBehaviour
     public void SetModeToStory(bool story)
     {
         isStoryMode = story;
+        isDailyChallenge = !story;
+    }
+
+    public void SetModeToDaily(bool daily)
+    {
+        isStoryMode = !daily;
+        isDailyChallenge = daily;
     }
 }

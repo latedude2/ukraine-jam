@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStoryMode: 0
+  isDailyChallenge: 0
 --- !u!4 &44133752
 Transform:
   m_ObjectHideFlags: 0
@@ -950,7 +951,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 646927922}
         m_TargetAssemblyTypeName: LoadLevels, Assembly-CSharp
-        m_MethodName: LoadDailyChallenge
+        m_MethodName: LoadChooseSceneAsDailyMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
