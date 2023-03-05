@@ -8,11 +8,12 @@ public class DailyRewardManager : MonoBehaviour
     [SerializeField] int playerLevel;
     [SerializeField] int xpForLevelUp = 10;
     [SerializeField] int playerXPPerDay = 2;
-    List<int> completedDays = new List<int>();
+
+    [SerializeField] private SerializableList<int> completedDays;
     // Start is called before the first frame update
     void Start()
     {
-        completedDays = new List<int>();
+        completedDays = new SerializableList<int>();
         LoadDataFromPlayerPrefs();
         GiveReward();
     }
@@ -23,14 +24,18 @@ public class DailyRewardManager : MonoBehaviour
         currentDay += System.DateTime.Now.Month * 12;
         currentDay += System.DateTime.Now.Year * 365;
         Debug.Log("Current day: " + currentDay);
-        if (completedDays.Contains(currentDay))
+        if(completedDays == null)
+        {
+            completedDays = new SerializableList<int>();
+        }
+        if (completedDays.list.Contains(currentDay))
         {
             //do nothing
             //Show that the player has already collected the reward
         }
         else
         {
-            completedDays.Add(currentDay);
+            completedDays.list.Add(currentDay);
             GivePlayerXP();
 
         }
@@ -58,7 +63,9 @@ public class DailyRewardManager : MonoBehaviour
     {
         playerXP = PlayerPrefs.GetInt("PlayerXP");
         playerLevel = PlayerPrefs.GetInt("PlayerLevel");
-        completedDays = JsonUtility.FromJson<List<int>>(PlayerPrefs.GetString("CompletedDays", "[0]"));
+        Debug.Log(PlayerPrefs.GetString("CompletedDays"));
+        completedDays = JsonUtility.FromJson<SerializableList<int>>(PlayerPrefs.GetString("CompletedDays"));
+        Debug.Log(completedDays);
     }
 
     void SaveDataToPlayerPrefs()
@@ -66,6 +73,12 @@ public class DailyRewardManager : MonoBehaviour
         PlayerPrefs.SetInt("PlayerXP", playerXP);
         PlayerPrefs.SetInt("PlayerLevel", playerLevel);
         string json = JsonUtility.ToJson(completedDays);
+        Debug.Log(json);
         PlayerPrefs.SetString("CompletedDays", json);
     }
 }
+
+ [System.Serializable]
+ public class SerializableList<T> {
+     public List<T> list;
+ }
