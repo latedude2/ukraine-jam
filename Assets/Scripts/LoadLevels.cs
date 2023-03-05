@@ -53,4 +53,9 @@ public class LoadLevels : MonoBehaviour
         if(playerStats != null) playerStats.GetComponent<Progression>().Level = 0;
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void LoadDailyChallenge()
+    {
+        SceneManager.LoadScene("DailyChallenge");
+    }
 }
