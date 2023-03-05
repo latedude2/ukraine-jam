@@ -6,8 +6,10 @@ public class DailyRewardManager : MonoBehaviour
 {
     [SerializeField] int playerXP;
     [SerializeField] int playerLevel;
-    [SerializeField] int xpForLevelUp = 10;
-    [SerializeField] int playerXPPerDay = 2;
+    [SerializeField] int xpForLevelUp = 50;
+    [SerializeField] int playerXPPerDay = 10;
+    [SerializeField] GameObject RewardEgg;
+    [SerializeField] Transform spawnEggTransform;
 
     [SerializeField] private SerializableList<int> completedDays;
     // Start is called before the first frame update
@@ -37,9 +39,22 @@ public class DailyRewardManager : MonoBehaviour
         {
             completedDays.list.Add(currentDay);
             GivePlayerXP();
-
+            StartCoroutine(SpawnRewardEggs());
         }
         SaveDataToPlayerPrefs();
+    }
+
+
+    IEnumerator SpawnRewardEggs()
+    {
+        for(int i = 0; i < playerXPPerDay; i++)
+        {
+            Instantiate(RewardEgg, spawnEggTransform);
+            //play sound
+            //particle effect
+
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     void GivePlayerXP()
@@ -81,4 +96,8 @@ public class DailyRewardManager : MonoBehaviour
  [System.Serializable]
  public class SerializableList<T> {
      public List<T> list;
+
+    public SerializableList() {
+        list = new List<T>();
+    }
  }
