@@ -76,7 +76,7 @@ public class BattleState : MonoBehaviour
 
     IEnumerator LoadLoseScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         SceneManager.LoadScene("Lose");
