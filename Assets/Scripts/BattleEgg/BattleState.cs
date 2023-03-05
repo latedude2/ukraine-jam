@@ -88,7 +88,11 @@ public class BattleState : MonoBehaviour
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         progression.IncreaseLevel();
-        if (!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
+        if(GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isDailyChallenge)
+        {
+            SceneManager.LoadScene("DailyReward");
+        }
+        else if (!GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
         {
             SceneManager.LoadScene("UpgradeEgg");
         }

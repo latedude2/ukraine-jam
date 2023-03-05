@@ -104,6 +104,12 @@ public class EggStatView : MonoBehaviour
         eggManager.EggSprite = chosenEggManager.GetComponent<SpriteRenderer>().sprite;
         eggManager.EggColor = chosenEggManager.GetComponent<SpriteRenderer>().color;
         buttonSoundManager.PlayOnButtonClick();
+        if(GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isDailyChallenge)
+        {
+            SceneManager.LoadScene("DailyChallenge");
+            return;
+        }
+
         //Load battle scene
         if (GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isStoryMode)
         {
