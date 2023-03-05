@@ -106,6 +106,19 @@ public class Enemy : MonoBehaviour
 
     void RandomizeSkin()
     {
+        if(GameObject.Find("GameModeManager").GetComponent<GameModeManager>().isDailyChallenge)
+        {
+            //use seed based on date
+            int currentDay = System.DateTime.Now.Day;
+            currentDay += System.DateTime.Now.Month * 12;
+            currentDay += System.DateTime.Now.Year * 365;
+            Random.InitState(currentDay);
+    }    else {
+            //use random seed
+            Random.InitState(System.DateTime.Now.Millisecond);
+        }
+            
+        
         GetComponent<SpriteRenderer>().sprite = enemySprites[Random.Range(0, enemySprites.Count)];
         GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.7f, 1f), Random.Range(0.7f, 1f), Random.Range(0.7f, 1f));
         eggStats.tex = GetComponent<SpriteRenderer>().sprite.texture;

@@ -19,7 +19,10 @@ public class DailyRewardManager : MonoBehaviour
 
     void GiveReward()
     {
-        int currentDay = System.DateTime.Now.DayOfYear;
+        int currentDay = System.DateTime.Now.Day;
+        currentDay += System.DateTime.Now.Month * 12;
+        currentDay += System.DateTime.Now.Year * 365;
+        Debug.Log("Current day: " + currentDay);
         if (completedDays.Contains(currentDay))
         {
             //do nothing
