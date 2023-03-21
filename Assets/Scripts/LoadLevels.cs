@@ -66,4 +66,9 @@ public class LoadLevels : MonoBehaviour
         GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToDaily(true);
         SceneManager.LoadScene("ChooseEgg");
     }
+
+    public void LoadNextTutorialScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
