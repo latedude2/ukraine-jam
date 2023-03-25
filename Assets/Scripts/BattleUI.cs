@@ -47,13 +47,16 @@ public class BattleUI : MonoBehaviour
     
     private void ProcessSide(Image uiElement, float value, Sprite[] cracks)
     {
-        value = Mathf.Clamp01(1 - value / 100);
-        uiElement.color = new Color(1, 0, 0, value);
+        var valueNormalized = Mathf.Clamp01(value / 100);
+        uiElement.GetComponent<HpDepleteMeter>().SetHp(valueNormalized);
+
+        var alpha = 1 - valueNormalized;
+        uiElement.color = new Color(1, 0, 0, alpha);
 
         int step = 0;
-        value *= 5;
-        if (value < 5)
-            step = Mathf.FloorToInt(value);
+        alpha *= 5;
+        if (alpha < 5)
+            step = Mathf.FloorToInt(alpha);
         else step = 4;
         uiElement.transform.GetChild(0).GetComponent<Image>().sprite = cracks[step];
     }
