@@ -24,6 +24,21 @@ public class BattleUI : MonoBehaviour
     public Sprite[] bottomLeftCracks = new Sprite[5];
     public Sprite[] bottomRightCracks = new Sprite[5];
 
+    private void Update() {
+        if(Input.GetKey(KeyCode.Alpha1))
+            ProcessSide(playerUI.top, 0.1f, topCracks);
+        if(Input.GetKey(KeyCode.Alpha2))
+            ProcessSide(playerUI.top, 0.2f, topCracks);
+        if(Input.GetKey(KeyCode.Alpha3))
+            ProcessSide(playerUI.top, 0.3f, topCracks);
+        if(Input.GetKey(KeyCode.Alpha4))
+            ProcessSide(playerUI.top, 0.4f, topCracks);
+        if(Input.GetKey(KeyCode.Alpha5))
+            ProcessSide(playerUI.top, 0.5f, topCracks);
+        if(Input.GetKey(KeyCode.Alpha6))
+            ProcessSide(playerUI.top, 0.6f, topCracks);
+    }
+
     public void UpdateUIHealth(float top, float topLeft, float topRight, float bottomLeft, float bottomRight, bool isPlayer)
     {
         Color c = Color.red;
