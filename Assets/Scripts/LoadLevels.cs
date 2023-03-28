@@ -69,6 +69,13 @@ public class LoadLevels : MonoBehaviour
 
     public void LoadNextTutorialScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            SceneManager.LoadScene("Tutorial_01");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }
