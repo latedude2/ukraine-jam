@@ -217,7 +217,16 @@ public class EggImpact : MonoBehaviour
                     floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().color = floatingDamageEnemyColor;    
                 }
                 float floatingDamageValueRounded = Mathf.Round(floatingDamageValue);
-                floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text = floatingDamageValueRounded + "!";
+                floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text = floatingDamageValueRounded.ToString();
+                if (floatingDamageValueRounded >= 15f){
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
+                }
+                if (floatingDamageValueRounded >= 30f){
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
+                }
+                if (floatingDamageValueRounded >= 50f){
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
+                }
                 Destroy(floatingDamageTextObject, 3f);
             }
         }
