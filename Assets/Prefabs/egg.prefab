@@ -281,6 +281,9 @@ MonoBehaviour:
   slowmoSnapshot: {fileID: 2382327028471852784, guid: d3a697370f5824a2fa5e25acdb09f0f0, type: 2}
   defaultSnapshot: {fileID: 24500006, guid: d3a697370f5824a2fa5e25acdb09f0f0, type: 2}
   transitionTime: 0.5
+  floatingDamageTextPrefab: {fileID: 6748838002765975857, guid: 50ce0d6b4ca6dae409cd6217cd1918ea, type: 3}
+  floatingDamagePlayerColor: {r: 0.25832146, g: 0.4056604, b: 0.26587734, a: 1}
+  floatingDamageEnemyColor: {r: 0.3584906, g: 0.25658277, b: 0.25533998, a: 1}
 --- !u!114 &8349598860931002356
 MonoBehaviour:
   m_ObjectHideFlags: 0
