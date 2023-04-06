@@ -133,8 +133,26 @@ public class EggImpact : MonoBehaviour
         }
     }
 
-    void SpawnFloatingDamageNumber(){
-        
+    public void SpawnFloatingDamageNumber(float floatingDamageValue){
+        //Instantiate Floating Damage Number at averagePos
+                GameObject floatingDamageTextObject = Instantiate(floatingDamageTextPrefab, transform.position, Quaternion.identity) as GameObject;
+                if(GetComponent<EggStats>().isPlayer) {
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().color = floatingDamageEnemyColor;
+                } else {
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().color = floatingDamagePlayerColor;    
+                }
+                float floatingDamageValueRounded = Mathf.Round(floatingDamageValue);
+                floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text = floatingDamageValueRounded.ToString();
+                if (floatingDamageValueRounded >= 15f){
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
+                }
+                if (floatingDamageValueRounded >= 30f){
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
+                }
+                if (floatingDamageValueRounded >= 50f){
+                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
+                }
+                Destroy(floatingDamageTextObject, 3f);
     }
 
 
@@ -190,44 +208,21 @@ public class EggImpact : MonoBehaviour
                 
 
                 //Debug.Log("Force: " + force);
-                float floatingDamageValue = 0;
+             
 
                 if (hitAngle > hitZoneAngles[0] && hitAngle < hitZoneAngles[4]){
                     col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(0, force), targetHitZone);
-                    floatingDamageValue = eggStats.CalcImpactValue(0, force) / eggStats.EggThicknessTop;
                 } else if(hitAngle > hitZoneAngles[1] && hitAngle < hitZoneAngles[0]){
                     col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(1, force), targetHitZone);
-                    floatingDamageValue = eggStats.CalcImpactValue(1, force) / eggStats.EggThicknessTopRight;
                 } else if(hitAngle > hitZoneAngles[2] && hitAngle < hitZoneAngles[1]){
                     col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(2, force), targetHitZone);
-                    floatingDamageValue = eggStats.CalcImpactValue(2, force) / eggStats.EggThicknessBottomRight;
                 } else if(hitAngle > hitZoneAngles[3] && hitAngle < hitZoneAngles[2]){
                     col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(3, force), targetHitZone);
-                    floatingDamageValue = eggStats.CalcImpactValue(3, force) / eggStats.EggThicknessBottomLeft;
                 } else if(hitAngle > hitZoneAngles[4] || hitAngle < hitZoneAngles[3]){
                     col.transform.GetComponent<EggStats>().TakeImpactDamage(eggStats.CalcImpactValue(4, force), targetHitZone);
-                    floatingDamageValue = eggStats.CalcImpactValue(4, force) / eggStats.EggThicknessTopLeft;
                 }
                 
-                //Instantiate Floating Damage Number at averagePos
-                GameObject floatingDamageTextObject = Instantiate(floatingDamageTextPrefab, col.transform.position, Quaternion.identity) as GameObject;
-                if(GetComponent<EggStats>().isPlayer) {
-                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().color = floatingDamagePlayerColor;
-                } else {
-                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().color = floatingDamageEnemyColor;    
-                }
-                float floatingDamageValueRounded = Mathf.Round(floatingDamageValue);
-                floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text = floatingDamageValueRounded.ToString();
-                if (floatingDamageValueRounded >= 15f){
-                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
-                }
-                if (floatingDamageValueRounded >= 30f){
-                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
-                }
-                if (floatingDamageValueRounded >= 50f){
-                    floatingDamageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text += "!";
-                }
-                Destroy(floatingDamageTextObject, 3f);
+                
             }
         }
     }

@@ -1074,7 +1074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 155, y: -335}
+  m_AnchoredPosition: {x: 148, y: -279}
   m_SizeDelta: {x: 72, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1455861618
@@ -1312,7 +1312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 199, y: -255}
+  m_AnchoredPosition: {x: 226.00002, y: -252}
   m_SizeDelta: {x: 72, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2032355044
@@ -1385,7 +1385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New eggs unlock every 5 daily challenges!
+  m_Text: New eggs unlock every 2 daily challenges!
 --- !u!222 &2032355047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1729,7 +1729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 199.90002, y: -257.4}
+  m_AnchoredPosition: {x: 226.90004, y: -254.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!198 &1846178569121032481
@@ -21031,7 +21031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 155.20001, y: -339.7}
+  m_AnchoredPosition: {x: 148.20003, y: -283.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &5554695252254292288
@@ -26007,8 +26007,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
+      propertyPath: xpForLevelUp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: playerXPPerDay
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: spawnEggTransform
@@ -26019,8 +26023,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 130679396960423385, guid: 415bff01355970a468b4be6b01fe930f, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
+      propertyPath: PreviewEgg.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.size
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: PreviewEgg.Array.data[0]
@@ -26029,7 +26037,7 @@ PrefabInstance:
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: PreviewEgg.Array.data[1]
       value: 
-      objectReference: {fileID: 650184922}
+      objectReference: {fileID: 1875343088}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: PreviewEgg.Array.data[2]
       value: 
@@ -26049,42 +26057,62 @@ PrefabInstance:
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: be49838bf97b1a64abc8ced91f05b185, type: 3}
+      objectReference: {fileID: 21300000, guid: e9cca0d8eb89590468e56d8b0c0fb6ba, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 6d42df34c22be724b980e30c50b1fff6, type: 3}
+      objectReference: {fileID: 21300000, guid: be49838bf97b1a64abc8ced91f05b185, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: cf86aa4666d971d47a8b94df5ff47c23, type: 3}
+      objectReference: {fileID: 21300000, guid: 51c5021819f37654085fb39ecffc2316, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: b8c419a7ea0a23a4eb3c97b460f08670, type: 3}
+      objectReference: {fileID: 21300000, guid: 6d42df34c22be724b980e30c50b1fff6, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[5]
       value: 
-      objectReference: {fileID: 21300000, guid: f2de119db4f94d840b3c7178b5eee801, type: 3}
+      objectReference: {fileID: 21300000, guid: 2e046fb5a6ee6a849963807326f48ece, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[6]
       value: 
-      objectReference: {fileID: 21300000, guid: 0b581cb4d5b39b2469edcd3eb8ce115a, type: 3}
+      objectReference: {fileID: 21300000, guid: 831feb5ae235dee408a9b447bc6dbdb3, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[7]
       value: 
-      objectReference: {fileID: 21300000, guid: 0e196f4829b6c7548be97cfde72ba574, type: 3}
+      objectReference: {fileID: 21300000, guid: cb3d3fa9b76370c448d654d9fad71610, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[8]
       value: 
-      objectReference: {fileID: 21300000, guid: 88211ab5b7a6d084a9fe7eac4433f06c, type: 3}
+      objectReference: {fileID: 21300000, guid: 0e196f4829b6c7548be97cfde72ba574, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: UnlockEggs.Array.data[9]
       value: 
-      objectReference: {fileID: 21300000, guid: 831feb5ae235dee408a9b447bc6dbdb3, type: 3}
+      objectReference: {fileID: 21300000, guid: 745ed3ff482d72648b712a4ecc7dfa29, type: 3}
+    - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
+      propertyPath: UnlockEggs.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: cf86aa4666d971d47a8b94df5ff47c23, type: 3}
+    - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
+      propertyPath: UnlockEggs.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: f2de119db4f94d840b3c7178b5eee801, type: 3}
+    - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
+      propertyPath: UnlockEggs.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b581cb4d5b39b2469edcd3eb8ce115a, type: 3}
+    - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
+      propertyPath: UnlockEggs.Array.data[13]
+      value: 
+      objectReference: {fileID: 21300000, guid: 88211ab5b7a6d084a9fe7eac4433f06c, type: 3}
+    - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
+      propertyPath: UnlockEggs.Array.data[14]
+      value: 
+      objectReference: {fileID: 21300000, guid: b8c419a7ea0a23a4eb3c97b460f08670, type: 3}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: updateEggParticle.Array.size
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: updateEggParticle.Array.data[0]
@@ -26093,7 +26121,7 @@ PrefabInstance:
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: updateEggParticle.Array.data[1]
       value: 
-      objectReference: {fileID: 5846634586901415087}
+      objectReference: {fileID: 8454974433963599946}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: updateEggParticle.Array.data[2]
       value: 

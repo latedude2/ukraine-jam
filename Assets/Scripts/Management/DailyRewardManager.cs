@@ -74,9 +74,8 @@ public class DailyRewardManager : MonoBehaviour
     void ShowEggProgress(){
         for(int i = 0; i < PreviewEgg.Count; i++)
         {
-            if (PreviousPlayerXP >= (xpForLevelUp/5)*(i+1)) {
+            if (PreviousPlayerXP >= (xpForLevelUp/PreviewEgg.Count)*(i+1)) {
                 PreviewEgg[i].SetActive(true);
-                Debug.Log("Old + " +(xpForLevelUp/5)*(i+1));
                 if (i+1 == PreviewEgg.Count) {
                     PreviewEgg[i].GetComponent<Image>().sprite = UnlockEggs[playerLevel]; //REMEMBER TO POPULATE UNLOCKEGGS WITH NEW EGG SKINS
                     //updateParticle.GetComponent<RectTransform>().localScale *= 4;
@@ -90,7 +89,7 @@ public class DailyRewardManager : MonoBehaviour
 
         for(int i = 0; i < PreviewEgg.Count; i++)
         {
-            if (playerXP >= (xpForLevelUp/5)*(i+1) && !PreviewEgg[i].activeSelf) {
+            if (playerXP >= (xpForLevelUp/PreviewEgg.Count)*(i+1) && !PreviewEgg[i].activeSelf) {
                 PreviewEgg[i].SetActive(true);
                 updateEggParticle[i].SetActive(true);
 
@@ -102,7 +101,6 @@ public class DailyRewardManager : MonoBehaviour
                     //updateParticle.GetComponent<RectTransform>().localScale *= 2;
                 }
                 //Destroy(updateParticle, 3f);
-                Debug.Log("New + " +(xpForLevelUp/5)*(i+1));
             }   
         }
         LevelUp();
