@@ -486,8 +486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -82}
-  m_SizeDelta: {x: 245.43237, y: 101.647095}
+  m_AnchoredPosition: {x: 5.8951, y: -79}
+  m_SizeDelta: {x: 322.3579, y: 107.014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932842249
 MonoBehaviour:
@@ -515,14 +515,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Daily challenge completed
+  m_Text: Daily challenge completed!
 --- !u!222 &932842250
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -960,8 +960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147, y: -140}
-  m_SizeDelta: {x: 195.43237, y: 111.79999}
+  m_AnchoredPosition: {x: 197.87181, y: -224.97}
+  m_SizeDelta: {x: 297.176, y: 111.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032355046
 MonoBehaviour:
@@ -984,11 +984,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93439795898240e47b622c644ae5002d, type: 3}
+    m_Font: {fileID: 12800000, guid: a392de0e1425f75418f338f2f2668db1, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -996,7 +996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New eggs every 5 dailies
+  m_Text: New eggs unlock every 5 daily challenges!
 --- !u!222 &2032355047
 CanvasRenderer:
   m_ObjectHideFlags: 0
