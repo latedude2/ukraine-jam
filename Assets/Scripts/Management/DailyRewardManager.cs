@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DailyRewardManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class DailyRewardManager : MonoBehaviour
     [SerializeField] List<GameObject> PreviewEgg = new List<GameObject>();
     [SerializeField] Transform spawnEggTransform;
     [SerializeField] List<Sprite> UnlockEggs;
-    [SerializeField] GameObject updateEggParticle;
+    [SerializeField] List<GameObject> updateEggParticle = new List<GameObject>();
 
     [SerializeField] private SerializableList<int> completedDays;
     // Start is called before the first frame update
@@ -35,7 +36,7 @@ public class DailyRewardManager : MonoBehaviour
         {
             completedDays = new SerializableList<int>();
         }
-        if (playerLevel !>= UnlockEggs.Count) {
+        if (playerLevel < UnlockEggs.Count) {
             if (completedDays.list.Contains(currentDay))
             {
                 //do nothing
@@ -49,6 +50,7 @@ public class DailyRewardManager : MonoBehaviour
                 StartCoroutine(SpawnRewardEggs());
                 ShowEggProgress();
                 StartCoroutine(UpdateEggProgress());
+                
             }
         }
 
@@ -74,6 +76,11 @@ public class DailyRewardManager : MonoBehaviour
         {
             if (PreviousPlayerXP >= (xpForLevelUp/5)*(i+1)) {
                 PreviewEgg[i].SetActive(true);
+                Debug.Log("Old + " +(xpForLevelUp/5)*(i+1));
+                if (i+1 == PreviewEgg.Count) {
+                    PreviewEgg[i].GetComponent<Image>().sprite = UnlockEggs[playerLevel]; //REMEMBER TO POPULATE UNLOCKEGGS WITH NEW EGG SKINS
+                    //updateParticle.GetComponent<RectTransform>().localScale *= 4;
+                }
             }
         }
     }
@@ -85,35 +92,39 @@ public class DailyRewardManager : MonoBehaviour
         {
             if (playerXP >= (xpForLevelUp/5)*(i+1) && !PreviewEgg[i].activeSelf) {
                 PreviewEgg[i].SetActive(true);
+                updateEggParticle[i].SetActive(true);
 
-                GameObject updateParticle = Instantiate(updateEggParticle, PreviewEgg[i].transform.position, Quaternion.identity) as GameObject;
-                if (i == PreviewEgg.Count) {
-                    PreviewEgg[i].GetComponent<SpriteRenderer>().sprite = UnlockEggs[playerLevel-1]; //REMEMBER TO POPULATE UNLOCKEGGS WITH NEW EGG SKINS
-                    updateParticle.transform.localScale *= 4;
+                //GameObject updateParticle = Instantiate(updateEggParticle, PreviewEgg[i].GetComponent<RectTransform>().position, Quaternion.identity) as GameObject;
+                if (i+1 == PreviewEgg.Count) {
+                    PreviewEgg[i].GetComponent<Image>().sprite = UnlockEggs[playerLevel]; //REMEMBER TO POPULATE UNLOCKEGGS WITH NEW EGG SKINS
+                    //updateParticle.GetComponent<RectTransform>().localScale *= 4;
                 } else {
-                    updateParticle.transform.localScale *= 2;
+                    //updateParticle.GetComponent<RectTransform>().localScale *= 2;
                 }
-                Destroy(updateParticle, 3f);
-            }
+                //Destroy(updateParticle, 3f);
+                Debug.Log("New + " +(xpForLevelUp/5)*(i+1));
+            }   
         }
+        LevelUp();
     }
 
     void GivePlayerXP()
     {
         playerXP += playerXPPerDay;
          
-        if (playerXP >= xpForLevelUp)
-        {
-            LevelUp();
-        }
+        
     }
 
     void LevelUp()
     {
-        playerLevel++;
-        playerXP -= xpForLevelUp;
+        if (playerXP >= xpForLevelUp)
+        {
 
-        if (playerLevel !> UnlockEggs.Count) {
+            playerLevel++;
+            playerXP -= xpForLevelUp;
+
+
+            SaveDataToPlayerPrefs();
             //Add UnlockEggs[playerLevel] to player eggs
         }
     }
