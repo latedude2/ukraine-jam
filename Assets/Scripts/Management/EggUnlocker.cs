@@ -11,7 +11,6 @@ public class EggUnlocker : MonoBehaviour
     void Start()
     {
         playerLevel = PlayerPrefs.GetInt("PlayerLevel");
-        Debug.Log(playerLevel);
 
         if (playerLevel >= unlockLevel) {
             gameObject.GetComponent<SpriteRenderer>().sprite = unlockSkin;
