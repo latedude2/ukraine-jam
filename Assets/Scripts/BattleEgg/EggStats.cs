@@ -112,14 +112,24 @@ public class EggStats : MonoBehaviour
         //Debug.Log("Incoming damage: " + incomingDamage + "; Side: " + side);
         if (side == 0) {    //tip
             currentHealthTop -= incomingDamage / EggThicknessTop;
+            Debug.Log("Player: "+ isPlayer + " Damage: " + (incomingDamage / EggThicknessTop));
+            eggImpact.SpawnFloatingDamageNumber(incomingDamage / EggThicknessTop);
         } else if (side == 1){  //right top
             currentHealthTopRight -= incomingDamage / EggThicknessTopRight;
+            Debug.Log("Player: "+ isPlayer + " Damage: " + (incomingDamage / EggThicknessTopRight));
+            eggImpact.SpawnFloatingDamageNumber(incomingDamage / EggThicknessTopRight);
         } else if (side == 2){  //right bottom
             currentHealthBottomRight -= incomingDamage / EggThicknessBottomRight;
+            Debug.Log("Player: "+ isPlayer + " Damage: " + (incomingDamage / EggThicknessBottomRight));
+            eggImpact.SpawnFloatingDamageNumber(incomingDamage / EggThicknessBottomRight);
         } else if (side == 3){  //left bottom
             currentHealthBottomLeft -= incomingDamage / EggThicknessBottomLeft;
+            Debug.Log("Player: "+ isPlayer + " Damage: " + (incomingDamage / EggThicknessBottomLeft));
+            eggImpact.SpawnFloatingDamageNumber(incomingDamage / EggThicknessBottomLeft);
         } else if (side == 4){  //left top
             currentHealthTopLeft -= incomingDamage / EggThicknessTopLeft; 
+            Debug.Log("Player: "+ isPlayer + " Damage: " + (incomingDamage / EggThicknessTopLeft));
+            eggImpact.SpawnFloatingDamageNumber(incomingDamage / EggThicknessTopLeft);
         }
         
         healthUI.UpdateUIHealth(
