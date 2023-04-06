@@ -160,6 +160,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.a
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.b
+      value: 0.56335783
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.g
+      value: 0.7075472
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.r
+      value: 0.54401034
+      objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -271,6 +287,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.a
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.b
+      value: 0.60898006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.g
+      value: 0.60898006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032456830, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
+      propertyPath: floatingDamageColor.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
     - target: {fileID: 1726029469717999377, guid: a0db501f340b3b54289b82ee2e8c8ff7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1114,6 +1146,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2121551931779662246, guid: 8ae55884e02382145add62a745158efa, type: 3}
+      propertyPath: m_Name
+      value: EnemyEggStatus
+      objectReference: {fileID: 0}
     - target: {fileID: 5853825767096306759, guid: 8ae55884e02382145add62a745158efa, type: 3}
       propertyPath: m_Name
       value: Canvas

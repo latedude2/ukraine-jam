@@ -5,18 +5,24 @@ using UnityEngine;
 public class DailyRewardManager : MonoBehaviour
 {
     [SerializeField] int playerXP;
+    [SerializeField] int PreviousPlayerXP;
     [SerializeField] int playerLevel;
     [SerializeField] int xpForLevelUp = 50;
     [SerializeField] int playerXPPerDay = 10;
     [SerializeField] GameObject RewardEgg;
+    [SerializeField] List<GameObject> PreviewEgg = new List<GameObject>();
     [SerializeField] Transform spawnEggTransform;
+    [SerializeField] List<Sprite> UnlockEggs;
+    [SerializeField] GameObject updateEggParticle;
 
     [SerializeField] private SerializableList<int> completedDays;
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.DeleteAll(); //Uncomment to refresh playerprefs in editor 
         completedDays = new SerializableList<int>();
         LoadDataFromPlayerPrefs();
+        PreviousPlayerXP = playerXP;
         GiveReward();
     }
 
@@ -34,13 +40,18 @@ public class DailyRewardManager : MonoBehaviour
         {
             //do nothing
             //Show that the player has already collected the reward
+            ShowEggProgress();
         }
         else
         {
             completedDays.list.Add(currentDay);
             GivePlayerXP();
             StartCoroutine(SpawnRewardEggs());
+            ShowEggProgress();
+            StartCoroutine(UpdateEggProgress());
         }
+
+        
         SaveDataToPlayerPrefs();
     }
 
@@ -57,21 +68,53 @@ public class DailyRewardManager : MonoBehaviour
         }
     }
 
-    void GivePlayerXP()
-    {
-        playerXP += playerXPPerDay;
-        if (playerXP >= xpForLevelUp)
+    void ShowEggProgress(){
+        for(int i = 0; i < PreviewEgg.Count; i++)
         {
-            playerLevel++;
-            playerXP = 0;
+            if (PreviousPlayerXP >= (xpForLevelUp/5)*(i+1)) {
+                PreviewEgg[i].SetActive(true);
+            }
         }
     }
 
-    void LevelUpVisuals()
+    IEnumerator UpdateEggProgress(){
+        yield return new WaitForSeconds(1f);
+
+        for(int i = 0; i < PreviewEgg.Count; i++)
+        {
+            if (playerXP >= (xpForLevelUp/5)*(i+1) && !PreviewEgg[i].activeSelf) {
+                PreviewEgg[i].SetActive(true);
+
+                GameObject updateParticle = Instantiate(updateEggParticle, PreviewEgg[i].transform.position, Quaternion.identity) as GameObject;
+                if (i == PreviewEgg.Count) {
+                    PreviewEgg[i].GetComponent<SpriteRenderer>().sprite = UnlockEggs[playerLevel-1]; //REMEMBER TO POPULATE UNLOCKEGGS WITH NEW EGG SKINS
+                    updateParticle.transform.localScale *= 4;
+                } else {
+                    updateParticle.transform.localScale *= 2;
+                }
+                Destroy(updateParticle, 3f);
+            }
+        }
+    }
+
+    void GivePlayerXP()
     {
-        //Show level up animation
-        //Show level up text
-        //Unlock new egg
+        playerXP += playerXPPerDay;
+         
+        if (playerXP >= xpForLevelUp)
+        {
+            LevelUp();
+        }
+    }
+
+    void LevelUp()
+    {
+        playerLevel++;
+        playerXP -= xpForLevelUp;
+
+        if (playerLevel !> UnlockEggs.Count){
+            //Add UnlockEggs[playerLevel] to player eggs
+        }
     }
 
     void LoadDataFromPlayerPrefs()
