@@ -44,10 +44,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerXP: 0
+  PreviousPlayerXP: 0
   playerLevel: 0
   xpForLevelUp: 50
   playerXPPerDay: 10
   RewardEgg: {fileID: 2343564119534630997, guid: 2125ff68529e016439f3cecf5386c1c1, type: 3}
+  PreviewEgg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnEggTransform: {fileID: 0}
+  UnlockEggs: []
+  updateEggParticle: {fileID: 4594496118291942783, guid: a6e387eda90576d44932d8e28b5e6dc6, type: 3}
   completedDays:
     list: 
