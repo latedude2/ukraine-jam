@@ -19,7 +19,6 @@ public class DailyRewardManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll(); //Uncomment to refresh playerprefs in editor 
         completedDays = new SerializableList<int>();
         LoadDataFromPlayerPrefs();
         PreviousPlayerXP = playerXP;
@@ -36,19 +35,21 @@ public class DailyRewardManager : MonoBehaviour
         {
             completedDays = new SerializableList<int>();
         }
-        if (completedDays.list.Contains(currentDay))
-        {
-            //do nothing
-            //Show that the player has already collected the reward
-            ShowEggProgress();
-        }
-        else
-        {
-            completedDays.list.Add(currentDay);
-            GivePlayerXP();
-            StartCoroutine(SpawnRewardEggs());
-            ShowEggProgress();
-            StartCoroutine(UpdateEggProgress());
+        if (playerLevel !>= UnlockEggs.Count) {
+            if (completedDays.list.Contains(currentDay))
+            {
+                //do nothing
+                //Show that the player has already collected the reward
+                ShowEggProgress();
+            }
+            else
+            {
+                completedDays.list.Add(currentDay);
+                GivePlayerXP();
+                StartCoroutine(SpawnRewardEggs());
+                ShowEggProgress();
+                StartCoroutine(UpdateEggProgress());
+            }
         }
 
         
@@ -112,7 +113,7 @@ public class DailyRewardManager : MonoBehaviour
         playerLevel++;
         playerXP -= xpForLevelUp;
 
-        if (playerLevel !> UnlockEggs.Count){
+        if (playerLevel !> UnlockEggs.Count) {
             //Add UnlockEggs[playerLevel] to player eggs
         }
     }
