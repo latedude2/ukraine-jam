@@ -123,8 +123,8 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.7f, 1f), Random.Range(0.7f, 1f), Random.Range(0.7f, 1f));
         eggStats.tex = GetComponent<SpriteRenderer>().sprite.texture;
 
-        GameObject.Find("EnemyEggStatus").GetComponent<Image>().sprite = GetComponent<SpriteRenderer>().sprite;
-        GameObject.Find("EnemyEggStatus").GetComponent<Image>().color = GetComponent<SpriteRenderer>().color;
+        GameObject.Find("EnemyEggStatus").transform.GetChild(1).GetComponent<Image>().sprite = GetComponent<SpriteRenderer>().sprite;
+        GameObject.Find("EnemyEggStatus").transform.GetChild(1).GetComponent<Image>().color = GetComponent<SpriteRenderer>().color;
     }
 
     IEnumerator DetectPlayerIdle(){
