@@ -40,6 +40,7 @@ public class LoadLevels : MonoBehaviour
     public void LoadChooseSceneAsStoryMode()
     {
         GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToStory(true);
+        GameObject.Find("GameModeManager").GetComponent<GameModeManager>().SetModeToDaily(false);
         SceneManager.LoadScene("ChooseEgg");
     }
 

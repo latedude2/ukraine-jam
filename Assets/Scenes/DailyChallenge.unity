@@ -1171,6 +1171,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2121551931779662246, guid: 8ae55884e02382145add62a745158efa, type: 3}
+      propertyPath: m_Name
+      value: EnemyEggStatus
+      objectReference: {fileID: 0}
     - target: {fileID: 5853825767096306759, guid: 8ae55884e02382145add62a745158efa, type: 3}
       propertyPath: m_Name
       value: Canvas
