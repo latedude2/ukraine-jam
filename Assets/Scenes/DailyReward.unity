@@ -26008,11 +26008,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: xpForLevelUp
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: playerXPPerDay
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8380185405997869178, guid: 1246af4f3664f9040aff52a8a5e7dc39, type: 3}
       propertyPath: spawnEggTransform
